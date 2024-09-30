@@ -88,12 +88,12 @@ typora-copy-images-to:${filename}/../assets
 
 10. Implementa una clase `Consumo`, la cual forma parte del "ordenador de a bordo" de un coche y tiene las siguientes características:
 
-    - Atributos:
+    - ##Atributos:
        - kilometros.
        - litros. Litros de combustible consumido.
        - vmed. Velocidad media.
        - pgas. Precio de la gasolina.
-    - Métodos:
+    - ##Métodos:
        - `getTiempo`. Indicará el tiempo empleado en realizar el viaje.
        - `consumoMedio`. Consumo medio del vehículo (en litros cada 100 kilómetros).
        - `consumoEuros`. Consumo medio del vehículo (en euros cada 100 kilómetros).
