@@ -397,7 +397,7 @@ Expresar las siguientes afirmaciones utilizando operadores lógicos y relacional
     		num %= 7 * num % 3 * 3;
             num = num % (7 * num % 3 * 3);
             num = 4 % ((7 * 4) % 3 * 3);
-            num = 4 % (28 % 3) * 3);
+            num = 4 % ((28 % 3) * 3);
             num= 4 % (1 * 3);
             num = 4 % 3;
             num=1;
