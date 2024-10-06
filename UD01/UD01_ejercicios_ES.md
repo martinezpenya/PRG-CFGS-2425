@@ -394,13 +394,7 @@ Expresar las siguientes afirmaciones utilizando operadores lógicos y relacional
     public class Activ13 {
     	public static void main(String[] args) {
            	int num = 4;
-    		num %= 7 * num % 3 * 3;
-            num = num % (7 * num % 3 * 3);
-            num = 4 % ((7 * 4) % 3 * 3);
-            num = 4 % (28 % 3) * 3);
-            num= 4 % (1 * 3);
-            num = 4 % 3;
-            num=1;
+    		   num %= 7 * num % 3 * 3;
             
             System.out.println(num);
     	}
