@@ -28,7 +28,7 @@ Pues esas estructuras de control de flujo son las que estudiaremos, conoceremos 
 
 Los tipos de estructuras de programación que se emplean para el control del flujo de los datos son los siguientes:
 
-- **Secuencia**: compuestas por 0, 1 o N sentencias que se ejecutan en el orden en que han sido escritas. Es la estructura más sencilla y sobre la que se construirán el resto de estructuras. 
+- **Secuencia**: compuestas por $0$, $1$ o $N$ sentencias que se ejecutan en el orden en que han sido escritas. Es la estructura más sencilla y sobre la que se construirán el resto de estructuras. 
 - **Selección**: es un tipo de sentencia especial de decisión y de un conjunto de secuencias de instrucciones asociadas a ella. Según la evaluación de la sentencia de decisión se generará un resultado (que suele ser verdadero o falso) y en función de éste, se ejecutarán una secuencia de instrucciones u otra. Las estructuras de selección podrán ser simples, compuestas y múltiples.
 - **Iteración**: es un tipo de sentencia especial de decisión y una secuencia de instrucciones que pueden ser repetidas según el resultado de la evaluación de la sentencia de decisión. Es decir, la secuencia de instrucciones se ejecutará repetidamente si la sentencia de decisión arroja un valor correcto, en otro la estructura de repetición se detendrá.
 
@@ -36,7 +36,7 @@ Además de las sentencias típicas de control de flujo, en esta unidad haremos u
 
 # Sentencias y bloques
 
-Este epígrafe lo utilizaremos para reafirmar cuestiones que son obvias y que en el transcurso de anteriores unidades se han dado por sabidas. Aunque, a veces, es conveniente recordar. Lo haremos como un conjunto de FAQs:
+Este epígrafe lo utilizaremos para reafirmar cuestiones que son obvias y que en el transcurso de anteriores unidades se han dado por sabidas. Aunque, a veces, es conveniente recordar. Lo haremos como un conjunto de FAQ's:
 
 - **¿Cómo se escribe un programa sencillo?** Si queremos que un programa sencillo realice instrucciones o sentencias para obtener un determinado resultado, es necesario colocar éstas una detrás de la otra, exactamente en el orden en que deben ejecutarse.
 
@@ -138,11 +138,12 @@ public class Organizacion_sentencias_3 {
 
 En este tercer archivo, podrás apreciar que se ha organizado el código en las siguientes partes: declaración de variables, petición de datos de entrada, procesamiento de dichos datos y obtención de la salida. Este tipo de organización está más estandarizada y hace que nuestros programas ganen en legibilidad.
 
-> Construyas de una forma o de otra tus programas, debes tener en cuenta siempre en Java las siguientes premisas:
+> ### Construyas de una forma o de otra tus programas, debes tener en cuenta siempre en Java las siguientes premisas:
 >
-> - Declara cada variable antes de utilizarla.
-> - Inicializa con un valor cada variable la primera vez que la utilices.
-> - No es recomendable usar variables no inicializadas en nuestros programas, pueden provocar errores o resultados imprevistos.
+> - **Declara** cada variable antes de utilizarla.
+> - **Inicializa** con un valor cada variable la primera vez que la utilices.
+>
+> No es recomendable usar variables no inicializadas en nuestros programas, pueden provocar errores o resultados imprevistos.
 
 # Estructuras de selección
 
