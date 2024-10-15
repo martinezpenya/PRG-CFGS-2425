@@ -39,7 +39,7 @@ typora-copy-images-to:${filename}/../assets
    }
    ```
 
-2. Reto 2: modifique el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, basta con acertar uno de los dos. La condición lógica que necesitará ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
+2. Reto 2: **modifique** el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, basta con acertar uno de los dos. La condición lógica que necesitará ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
 
    ```java
    import java.util.Scanner;
