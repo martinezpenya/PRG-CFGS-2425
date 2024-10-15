@@ -210,7 +210,7 @@ typora-copy-images-to:${filename}/../assets
 
     ```sh
     Introduce un número entero: 3761
-    La última cifra de 3761 es 6
+    La penúltima cifra de 3761 es 6
     ```
     
     Una vez hayas comprobado que el programa funciona correctamente, prueba qué ocurre si el usuario introduce un valor de una sola cifra (por ejemlo 4). Explica el resultado mostrado por el programa.
