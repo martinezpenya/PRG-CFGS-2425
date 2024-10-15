@@ -265,7 +265,7 @@ Para insertar una imagen se debe poner un código con dos partes:
 * Seguido de `(nombrefichero.extension)`, que es el archivo imagen (con su dirección).
 
 ```
-[texto alternativo](file-name.md)
+![texto alternativo](file-name.jpg)
 ```
 
 Un ejemplo:
