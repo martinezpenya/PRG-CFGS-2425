@@ -2,7 +2,7 @@ package UD03;
 
 import java.util.Scanner;
 
-public class P7_Assertions {
+public class P7_Assertions1 {
     // Programa Java para demostrar el uso de las assertions
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
