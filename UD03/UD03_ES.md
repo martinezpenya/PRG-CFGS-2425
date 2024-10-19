@@ -4,7 +4,7 @@ language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2024, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet) [www.ieseduardoprimo.es]
+IES: IES Eduardo Primo Marqués [www.ieseduardoprimo.es]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
@@ -54,7 +54,7 @@ Este epígrafe lo utilizaremos para reafirmar cuestiones que son obvias y que en
   | ------------------------------------------------ | ------------------------------------------------------------ |
   | ```{sentencia1; sentencia2; ...; sentenciaN;}``` | `{`<br />    `sentencia1;`<br />    `sentencia2;`<br />    `...;`<br />    `sentenciaN;`<br />`}` |
 
-- ¿En un bloque de sentencias, éstas deben estar colocadas con un orden exacto? En ciertos casos sí, aunque si al final de su ejecución se obtiene el mismo resultado, podrían ocupar diferentes posiciones en nuestro programa.
+- **¿En un bloque de sentencias, éstas deben estar colocadas con un orden exacto?** En ciertos casos sí, aunque si al final de su ejecución se obtiene el mismo resultado, podrían ocupar diferentes posiciones en nuestro programa.
 
 **DEBES CONOCER**
 Observa los tres archivos que te ofrecemos a continuación y compara su código fuente. Verás que los tres obtienen el mismo resultado, pero la organización de las sentencias que los componen es diferente entre ellos.
@@ -345,7 +345,7 @@ Nuestros programas ya son capaces de controlar su ejecución teniendo en cuenta 
 A este tipo de estructuras se las denomina estructuras de repetición, estructuras repetitivas, bucles o estructuras iterativas. En Java existen cuatro clases de bucles:
 
 - Bucle `for` (repite para)
-- Bucle `for/in` (repite para cada)
+- Bucle `for/in` (repite para cada), aka `for each`
 - Bucle `while` (repite mientras)
 - Bucle `do while` (repite hasta)
 
@@ -890,8 +890,8 @@ public class P7_Assertions {
         Scanner entrada = new Scanner(System.in);
         System.out.print("Introduce tu edad: ");
         int age = entrada.nextInt();
-        assert age >= 18 : "Cannot Vote";
-        System.out.println("The voter's age is " + age);
+        assert (age >= 18): "No puede votar";
+        System.out.println("La edad del votante es de " + age);
     }
 }
 ```
@@ -919,6 +919,34 @@ Salida:
 Introduce tu edad: 14
 Exception in thread "main" java.lang.AssertionError: No puede votar
 	at UD03.P7_Assertions.main(P7_Assertions.java:11)
+```
+
+Otro ejemplo:
+
+```java
+package UD03;
+
+public class P7_Assertions2 {
+    public static void main(String[] args) {
+        System.out.println("Probando Aserciones...");
+        assert true : "Nunca veremos esto.";
+        assert false : "Esto solo lo veremos si activamos las aserciones.";
+    }
+}
+```
+
+Ejecución sin aserciones:
+
+```
+Probando Aserciones...
+```
+
+Y con aserciones:
+
+```
+Probando Aserciones...
+Exception in thread "main" java.lang.AssertionError: Esto solo lo veremos si activamos las aserciones.
+	at UD03.P7_Assertions2.main(P7_Assertions2.java:7)
 ```
 
 ## ¿Por qué utilizar aserciones?

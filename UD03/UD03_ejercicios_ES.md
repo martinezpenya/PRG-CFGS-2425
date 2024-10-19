@@ -4,7 +4,7 @@ language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2024, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet) [www.ieseduardoprimo.es]
+IES: IES Eduardo Primo Marqués [www.ieseduardoprimo.es]
 header: ${title} - ${subject} (ver. ${today}) 
 footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
 typora-root-url:${filename}/../
@@ -1352,6 +1352,45 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 17. Implementa una clase `ConversorTemperatura` que tenga un  método para convertir grados Celsius a Fahrenheit. Si el valor en grados Celsius es inferior a -273.15, lanza una excepción personalizada.  Captura la excepción y muestra un mensaje de error en el método  principal.
 18. Diseña una clase `ValidadorEdad` que tenga un método para  validar si una persona tiene una edad válida (por ejemplo, entre 0 y 120 años). Si la edad no es válida, lanza una excepción personalizada y  muestra un mensaje de error en el método principal.
 
+## Aserciones
+
+1. A partir del siguiente fragmento de código, añade una linea debajo del comentario de la linea 4 que haga lo que se solicita:
+
+   ```java
+   class Main {
+       public static void main(String args[]) {
+           String[] finde = {"viernes", "sabado", "domingo"};
+           //Añade una aserción que compruebe que solo hay dos dias en el fin de semana.
+           
+           System.out.println("Solo hay " + weekends.length + "  dias en el fin de semana");
+       }
+   }
+   ```
+
+2. Escribe un método llamado `validarEdad(int edad)` que acepte como parámetro la edad de una persona. Usa una aserción para verificar que la edad sea un valor positivo y menor que 150. Si la edad es negativa o extremadamente alta, la aserción debería fallar.
+
+   ```java
+   // Ejemplo de uso:
+   validarEdad(25); // Debería pasar la aserción
+   validarEdad(-5); // Debería fallar la aserción
+   ```
+
+3. Crea un método llamado `esPar(int numero)` que devuelva `true` si el número es par y `false` en caso contrario. Luego, escribe una aserción para verificar que el resultado es `true` cuando el número proporcionado es efectivamente par.
+
+   ```java
+   // Ejemplo de uso:
+   assert esPar(4) : "El número 4 debería ser par";
+   assert !esPar(3) : "El número 3 no debería ser par";
+   ```
+
+4. Implementa un método llamado `dentroDeRango(int numero, int min, int max)` que devuelva `true` si el número está en el rango `[min, max]` y `false` en caso contrario. Usa aserciones para probar que el método devuelve `true` para un número dentro del rango y `false` para uno fuera.
+
+   ```java
+   // Ejemplo de uso:
+   assert dentroDeRango(5, 1, 10) : "El número 5 debería estar en el rango [1, 10]";
+   assert !dentroDeRango(15, 1, 10) : "El número 15 no debería estar en el rango [1, 10]";
+   ```
+
 # Actividades
 
 1. Transforma el siguiente bucle for en un bucle while:
@@ -1554,6 +1593,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
     343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
 
 56. Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La función debe recibir como parámetros los tres números y devolver el mayor.
+
 
 # Fuentes de información
 
