@@ -156,14 +156,15 @@ Vamos a resolverlo ahora ayudándonos de arrays:
 
 ```java
 public static String nombreMes(int mes){
-    String[] nombre = {"enero", "febrero", "marzo", "abril",
+    String[] nombre = {"", "enero", "febrero", "marzo", "abril",
                        "mayo", "junio", "julio","agosto",
                        "septiembre", "octubre", "noviembre", "diciembre"};
-    return nombre[mes-1];
+    return nombre[mes];
 }
 ```
 
 El método define un array de `String` que se inicializa con los nombres de los doce meses. La primera componente del array (`nombre[0]`) se deja vacía, de forma que enero quede almacenado en `nombre[1]`.
+
 Devolver el nombre del mes indicado se reduce a devolver el componente del array cuyo número indica el parámetro mes: `nombre[mes]`
 
 ## Arrays como parámetros. Paso de parámetros por referencia.
