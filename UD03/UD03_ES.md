@@ -964,17 +964,18 @@ Dondequiera que un programador quiera ver si sus suposiciones son erróneas o no
 
 Las aserciones se utilizan principalmente para comprobar situaciones lógicamente imposibles. Por ejemplo, se pueden utilizar para comprobar el estado que espera un código antes de empezar a ejecutarse o el estado después de que termine de ejecutarse. A diferencia del manejo normal de excepciones/errores, las aserciones generalmente están deshabilitadas en tiempo de ejecución.
 
-Dónde utilizar las :  
+¿Dónde utilizarlas?:  
 
-- Argumentos a los métodos privados. Los argumentos privados los proporciona únicamente el código del desarrollador y es posible que el desarrollador desee comprobar sus suposiciones sobre los argumentos.
+- Argumentos para los métodos privados. Los argumentos para los métodos privados los proporciona únicamente el código del desarrollador y es posible que este desee comprobar sus suposiciones sobre los argumentos.
 - Casos condicionales.
 - Condiciones al inicio de cualquier método.
 
-Dónde **NO** utilizar aserciones: 
+¿Dónde **NO** utilizar aserciones?: 
 
-- Las afirmaciones no deben usarse para reemplazar mensajes de error
-- Las afirmaciones no deben usarse para verificar argumentos en los métodos públicos, ya que pueden ser proporcionados por el usuario. El manejo de errores debe usarse para manejar los errores proporcionados por los usuarios.
-- Las afirmaciones no deben usarse en argumentos de línea de comando.
+- Las aserciones no deben usarse para reemplazar mensajes de error
+- Las aserciones no deben usarse para verificar argumentos en los métodos públicos, ya que pueden ser proporcionados por el usuario. 
+- Para manejar los errores proporcionados por los usuarios usaremos las excepciones.
+- Las aserciones no deben usarse en argumentos de línea de comando.
 
 
 # Ejemplos UD03
