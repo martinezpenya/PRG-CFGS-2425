@@ -52,7 +52,7 @@ typora-copy-images-to:${filename}/../assets
            Scanner lector = new Scanner(System.in);
            System.out.println("Empecemos el juego.");
            System.out.print("Adivina el valor entero, entre 0 y 10: ");
-           int valorUsuariO = lector.nextInt();
+           int valorUsuario = lector.nextInt();
            lector.nextLine();
            if (VALOR_SECRETO == valorUsuario) {
                System.out.println("¡Exactamente! Era " + VALOR_SECRETO + ".");

@@ -205,7 +205,7 @@ typora-copy-images-to:${filename}/../assets
     - Métodos Setters/getters.
     - Método `prestamo` que incremente el atributo correspondiente cada vez que se realice un préstamo del libro. No se podrán prestar libros de los que no queden ejemplares disponibles para prestar. Devuelve `true` si se ha podido realizar la operación y `false` en caso contrario.
     - Método `devolucion` que decremente el atributo correspondiente cuando se produzca la devolución de un libro. No se podrán devolver libros que no se hayan prestado. Devuelve `true` si se ha podido realizar la operación y `false` en caso contrario.
-    - Método `perdido` que decremente el atributo número de ejemplares por perdida de ejemplar. No se podrán devolver libros que no tengan ejemplares. Devuelve `true` si se ha podido realizar la operación y `false` en caso contrario.
+    - Método `perdido` que decremente el atributo número de ejemplares por perdida de ejemplar. No se podrán perder libros que no tengan ejemplares o no se hayan prestado. Devuelve `true` si se ha podido realizar la operación y `false` en caso contrario.
     - Método `mostrarDatos` para mostrar los datos de los libros.
 
     Crear una clase principal `main` ejecutable:
@@ -234,7 +234,7 @@ typora-copy-images-to:${filename}/../assets
        - `habitacionesTotales`
        - `habitacionesOcupadas`
      - Métodos:
-       - Hospital: Permite crear una instancia con los datos de un hospital.
+       - `Hospital`: Permite crear una instancia con los datos de un hospital.
        - Métodos get.
        - Métodos set.
        - Método `ingreso` que incrementa las habitaciones ocupadas. No puede realizarse el ingreso si las habitaciones ocupadas son iguales a las habitaciones totales del hospital. Devuelve `true` si se ha podido realizar el ingreso.
@@ -419,4 +419,4 @@ typora-copy-images-to:${filename}/../assets
 - Apuntes AulaCampus
 - [Apuntes José Luis Comesaña](https://www.sitiolibre.com/)
 - [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
-- [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
+- [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)nom
