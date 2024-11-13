@@ -955,9 +955,9 @@ Dondequiera que un programador quiera ver si sus suposiciones son erróneas o no
 
 - Para asegurarse de que un código que parece inalcanzable sea realmente inalcanzable.
 - Para asegurarse de que las suposiciones escritas en los comentarios sean correctas.
-- Para asegurarse de que no se alcance el caso del interruptor predeterminado.
+- Para asegurarse de que no se alcance el caso default del switch.
 - Para comprobar el estado del objeto.
-- Al comienzo del método
+- Al comienzo del método.
 - Después de la invocación del método.
 
 ## Aserción o Excepciones
