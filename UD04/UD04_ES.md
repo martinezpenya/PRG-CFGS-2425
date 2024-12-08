@@ -1,4 +1,5 @@
 ---
+
 title: UD04: Estructuras de datos: Arrays y matrices. Recursividad.
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
@@ -156,15 +157,14 @@ Vamos a resolverlo ahora ayudándonos de arrays:
 
 ```java
 public static String nombreMes(int mes){
-    String[] nombre = {"", "enero", "febrero", "marzo", "abril",
+    String[] nombre = {"enero", "febrero", "marzo", "abril",
                        "mayo", "junio", "julio","agosto",
                        "septiembre", "octubre", "noviembre", "diciembre"};
-    return nombre[mes];
+    return nombre[mes-1];
 }
 ```
 
 El método define un array de `String` que se inicializa con los nombres de los doce meses. La primera componente del array (`nombre[0]`) se deja vacía, de forma que enero quede almacenado en `nombre[1]`.
-
 Devolver el nombre del mes indicado se reduce a devolver el componente del array cuyo número indica el parámetro mes: `nombre[mes]`
 
 ## Arrays como parámetros. Paso de parámetros por referencia.
@@ -277,7 +277,7 @@ public static double pluviosidadMaxima(double[] lluvia){
     //Recorremos el array desde la posición 1, comprobando si hay una pluviosidad mayor
     for (int i = 1; i<lluvia.length; i++)
         if(lluvia[i] > max){
-        	max = lluvia[i];    
+        	max = lluvia[i];
         } 
     return max;
 }
@@ -369,7 +369,7 @@ public static int primerDiaSinLluvia2(double[] lluvia){
 }
 ```
 
-En este caso el subíndice `i` se incrementa mientras estemos dentro de los límites del array y no encontremos un día con lluvia `0`. Al finalizar el bucle hay que comprobar por cual de las dos razones finalizó: ¿Se encontró un día sin lluvias o se recorrió todo el array sin encontrar ninguno? En esta comprobación es importante no acceder al array si existe la posibilidad de que el subíndice esté fuera de los límites del array. La siguiente comprobación sería incorrecta:
+En este caso el subíndice `i` se incrementa mientras estemos dentro de los límites del array y no encontremos un día con lluvia `0`. Al finalizar el bucle hay que comprobar por cual de las dos razones finalizó: ¿Se encontró un día sin lluvias o se recorrió todo el array sin encontrar ninguno? En esta comprobación es importante no acceder al array si existe la posibilidad de que el subíndice esté fuera de los límites del array. La siguiente comprobación sería **incorrecta**:
 
 ```java
 if (lluvia[i] == 0) return i;
@@ -386,6 +386,18 @@ public static int primerDiaSinLluvia3(double[] lluvia){
     for (i=0; i<lluvia.length && lluvia[i] != 0; i++) /*Nada*/ ;
     if (i == lluvia.length) return -1 ;
     else return i;
+}
+```
+
+Otra opción más:
+
+```java
+public static int primerDiaSinLluvia4(double[] lluvia){
+    int i=0 ;
+    while (i<lluvia.length){
+        if (lluvia[i++] == 0) return i ;
+    }
+    return -1 ;
 }
 ```
 
@@ -1288,6 +1300,7 @@ public class Recursividad {
 - [Curso Java Arrays I. Vídeo 23](https://youtu.be/UID_EKKfpcE)
 - [Curso Java Arrays II. Vídeo 24](https://youtu.be/NwztwM_xGgU)
 - [Curso Java Arrays III. Arrays bidimensionales. Vídeo 25](https://youtu.be/_tUncS0AsNE)
+- [Curso Java Arrays IV. Arrays bidimensionales II. Vídeo 26](https://youtu.be/xEHkuRApCno)
 
 # Fuentes de información
 

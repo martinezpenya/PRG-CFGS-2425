@@ -459,7 +459,7 @@ class Telefono {
             System.out.println("Ejecute así: java Telefono <nombre>");
         } else {
             for (i = 0; i < numeros.length; i++) {
-                System.out.println(numeros[i][0] + ": " + numeros);
+                System.out.println(numeros + ": " + numeros);
                 break;
             }
             if (i == numeros.length){
@@ -551,7 +551,7 @@ StringBuilder s = new StringBuilder();
 for (int i = 1; i < 100; i++) {
     s.append(", ").append(i);
 }
-System.out.println(s.toString());
+System.out.println(s);
 ```
 
 
