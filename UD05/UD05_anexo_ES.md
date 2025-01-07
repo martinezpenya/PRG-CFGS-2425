@@ -199,7 +199,7 @@ System.out.print(c.get(Calendar.DAY_OF_MONTH));//19
 System.out.print("/"); 
 System.out.print(c.get(Calendar.MONTH)+1); //9
 System.out.print("/"); 
-System.out.println(c.get(Calendar.YEAR)+1); //2022
+System.out.println(c.get(Calendar.YEAR)); //2022
 ```
 
 ## Paquete `java.time`
