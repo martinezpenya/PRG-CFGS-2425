@@ -22,4 +22,5 @@ public class Empleado extends Persona {
     public String toString() {
         return super.toString() + "\nSueldo Base: " + sueldoBase;
     }
+
 }
