@@ -978,81 +978,196 @@ Si necesitas implementar un destructor (normalmente no será necesario), debes t
 
 # Clases Anidadas, Clases Internas (*Inner Class*)
 
-Una clase anidada es una clase que es miembro de otra clase. La clase anidada al ser miembro de la clase externa tienen acceso a todos sus métodos y atributos.
+## **Clase Anidada (Nested Class):**
 
-Permiten:
+Una clase anidada es una clase estática definida dentro de otra clase. Se declara con el modificador `static`.
 
-- acceder a los campos privados de la otra clase.
-- ocultar la clase interna de las otras clases del paquete.
-- ...
+Asociación:
 
-```java
-class Externa{
-    private String a;
-    ...
-    class Interna{
-        //a es accesible
-        ...
-    }
-    ...
-}
-class Otra{
-    //a no es accesible
-}
-```
+- No tiene una relación directa con las instancias de la clase externa.
+- Se puede acceder a ella sin necesidad de crear una instancia de la clase externa.
 
-Para instanciar una clase interna se utilizará la sentencia:
+Contexto:
+
+- Solo puede acceder a los miembros `static` de la clase externa.
+- No puede acceder a miembros de instancia (no estáticos) de la clase externa.
+
+Uso común:
+
+- Se utiliza cuando la clase anidada tiene un propósito independiente de las instancias de la clase externa.
+
+**Ejemplo:**
 
 ```java
-Externa objetoExterno=new Externa();
-Externa.Interna objetoInterno = objetoExterno.new Interna();
-```
-
-Ejemplo:
-
-```java
-class Pc {
-
-    double precio;
-
-    public String toString() {
-        return "El precio del PC es " + this.precio;
-    }
-
-    class Monitor {
-
-        String marca;
-
-        public String toString() {
-            return "El monitor es de la marca " + this.marca;
-        }
-    }
-
-    class Cpu {
-
-        String marca;
-
-        public String toString() {
-            return "La CPU es de la marca " + this.marca;
+public class Empresa {
+[...]
+    static class PlantillaCompletaException extends Exception {
+        public PlantillaCompletaException() {
+            super("La empresa tiene la plantilla completa.");
         }
     }
 }
+```
 
-public class ClaseInternaHardware {
+Así después podemos usarla en el `catch` accediendo directamente a la clase `Empresa` (ya que es `static`):
 
+```java
+public class TestEmpresa {
     public static void main(String[] args) {
-        Pc miPc = new Pc();
-        Pc.Monitor miMonitor = miPc.new Monitor();
-        Pc.Cpu miCpu = miPc.new Cpu();
-        miPc.precio = 1250.75;
-        miMonitor.marca = "Asus";
-        miCpu.marca = "AMD";
-        System.out.println(miPc); //El precio del PC es 1250.75
-        System.out.println(miMonitor); //El monitor es de la marca Asus
-        System.out.println(miCpu); //La CPU es de la marca AMD
+		[...]
+        try {
+            [...]
+        } catch (Empresa.PlantillaCompletaException ex) {
+            System.err.println(ex.getMessage());
+        }
+        [...]
     }
 }
 ```
+
+## **Clase Interna (Inner Class):**
+
+Una clase interna es una clase no estática definida dentro de otra clase. No se declara con `static`.
+
+Asociación:
+
+- Está directamente asociada con una instancia de la clase externa.
+- Para instanciarla, primero necesitas una instancia de la clase externa.
+
+Contexto:
+
+- Puede acceder a **todos** los miembros (estáticos y no estáticos) de la clase externa, incluso si son privados.
+- La clase interna tiene una referencia implícita a la instancia de la clase externa.
+
+Uso común:
+
+- Se utiliza cuando la clase interna necesita interactuar con los miembros de instancia de la clase externa.
+
+**Ejemplo:**
+
+   ```java
+   class Pc {
+   
+       double precio;
+   
+       public String toString() {
+           return "El precio del PC es " + this.precio;
+       }
+   
+       class Monitor {
+   
+           String marca;
+   
+           public String toString() {
+               return "El monitor es de la marca " + this.marca;
+           }
+       }
+   
+       class Cpu {
+   
+           String marca;
+   
+           public String toString() {
+               return "La CPU es de la marca " + this.marca;
+           }
+       }
+   }
+   
+   public class ClaseInternaHardware {
+   
+       public static void main(String[] args) {
+           Pc miPc = new Pc();
+           Pc.Monitor miMonitor = miPc.new Monitor();
+           Pc.Cpu miCpu = miPc.new Cpu();
+           miPc.precio = 1250.75;
+           miMonitor.marca = "Asus";
+           miCpu.marca = "AMD";
+           System.out.println(miPc); //El precio del PC es 1250.75
+           System.out.println(miMonitor); //El monitor es de la marca Asus
+           System.out.println(miCpu); //La CPU es de la marca AMD
+       }
+   }
+   ```
+
+## **Comparación Resumida:**
+
+| **Característica**               | **Clase Anidada (Nested)**                                   | **Clase Interna (Inner)**                                |
+| -------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------- |
+| **Es estática**                  | Sí (`static`)                                                | No (`non-static`)                                        |
+| **Acceso a clase externa**       | Solo miembros `static`                                       | Miembros estáticos y no estáticos                        |
+| **Asociación con clase externa** | No está asociada a instancias                                | Está asociada a una instancia de la clase externa        |
+| **Uso común**                    | Lógica independiente de instancias de la clase externa       | Lógica que necesita interactuar con la instancia externa |
+| **Instanciación**                | `OuterClass.NestedClass nested = new OuterClass.NestedClass();` | `OuterClass.InnerClass inner = outer.new InnerClass();`  |
+
+## Convenciones comunes sobre el número de clases en un archivo:
+
+1. **Una clase pública por archivo:**
+	Es una convención estándar en Java que cada archivo .java debe contener solo una clase pública, y el nombre del archivo debe coincidir exactamente con el nombre de la clase pública (incluyendo mayúsculas y minúsculas). Esto es obligatorio para que el compilador de Java pueda encontrar las clases correctamente.
+
+	Ejemplo:
+	```java    
+	// Archivo: MiClase.java
+	public class MiClase {
+	    // Código de la clase
+	}
+	```
+2. **Clases no públicas en el mismo archivo:**
+
+    Puedes incluir múltiples clases no públicas (con modificador default o package-private) en el mismo archivo, siempre que no haya más de una clase pública.
+    
+    Ejemplo:
+    
+    ```java
+    // Archivo: ClasePrincipal.java
+    public class ClasePrincipal {
+        // Código de la clase pública
+    }
+    
+    class ClaseAuxiliar {
+        // Código de la clase auxiliar
+    }
+    ```
+    
+    Sin embargo, esto no es una práctica común en proyectos grandes, ya que puede dificultar el mantenimiento y la localización de clases.
+
+3. **Separar clases auxiliares en archivos propios:**
+
+   Aunque no es obligatorio, es una buena práctica colocar cada clase en su propio archivo, incluso si no es pública. Esto facilita:
+
+   - La localización y lectura de la clase.
+   - El control de versiones y la fusión de cambios en sistemas de control de código fuente.
+   - La prueba unitaria y el mantenimiento.
+
+4. **Uso de clases anidadas:**
+
+   Si una clase es relevante solo dentro del contexto de otra clase, considera usar una clase anidada o una clase interna en lugar de una clase separada.
+
+   Ejemplo:
+
+	```java
+	public class ClaseExterna {
+	    private static class ClaseAnidada {
+	        // Clase anidada
+	    }
+	
+	    private class InnerClass {
+	        // Clase interna
+	    }
+	}
+	```
+
+5. **Evitar clases no relacionadas en un solo archivo:**
+
+   Colocar múltiples clases no relacionadas en un solo archivo se considera una mala práctica, ya que:
+
+   - Puede hacer que el archivo sea difícil de leer.
+   - Introduce acoplamiento innecesario entre clases.
+   - Viola el principio de responsabilidad única (SRP).
+
+6. **Clases utilitarias:**
+
+   Para clases con métodos estáticos (por ejemplo, `Utils` o `Constants`), es común colocarlas en un único archivo, ya que suelen ser pequeñas y no tienen lógica compleja.
+
 
 # Introducción a la herencia.
 
@@ -1214,8 +1329,7 @@ public class Casting {
 
     public static void main(String[] args) {     
         // Casting Implicito
-        Persona encargadoCarniceria = new Encargado("Rosa Ramos", 1200,
-                "Carniceria");
+        Persona encargadoCarniceria = new Encargado("Rosa Ramos", 1200, "Carniceria");
 
         // No tenemos disponibles los métodos de la clase Encargado:
         //EncargadaCarniceria.setSueldoBase(1200);

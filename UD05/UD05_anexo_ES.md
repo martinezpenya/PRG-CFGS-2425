@@ -325,7 +325,7 @@ System.out.println(periodo3); //P1Y
 
 ## `ChronoUnit`
 
-Permite devolver el tiempo transcurrido entre dos fechas en diferentes formatos (`DAYS`, `MONTHS`, `YEARS`, `HOURS`, `MINUTES`, `SECONDS`, ...). Debemos importar la clase `time.temporal.ChronoUnit`;
+Permite devolver el tiempo transcurrido entre dos fechas en diferentes formatos (`DAYS`, `MONTHS`, `YEARS`, `HOURS`, `MINUTES`, `SECONDS`, ...). Debemos importar la clase `java.time.temporal.ChronoUnit`;
 
 Ejemplo:
 
