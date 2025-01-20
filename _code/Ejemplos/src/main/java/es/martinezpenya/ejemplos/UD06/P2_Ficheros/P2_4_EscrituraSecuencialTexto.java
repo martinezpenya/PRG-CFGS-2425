@@ -13,7 +13,7 @@ public class P2_4_EscrituraSecuencialTexto {
             }
             System.out.println("FIN");
         } catch (FileNotFoundException e) {
-            System.out.println("Probrema al abrir el fichero");
+            System.out.println("Problema al abrir el fichero");
         } catch (IOException e) {
             System.out.println("Problema al escribir");
         }

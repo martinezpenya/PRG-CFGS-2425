@@ -7,7 +7,7 @@ public class P2_3_LecturaSecuencialTexto {
     final static String VOCALES = "AEIOUaeiouáéíóúàèìòù";
 
     public static void main(String[] args) {
-        try (FileReader f = new FileReader(new File("texto.txt"));) {
+        try (FileReader f = new FileReader(new File("src/texto.txt"));) {
             int contadorVocales = 0;
             int caracter;
             while ((caracter = f.read()) != -1) {

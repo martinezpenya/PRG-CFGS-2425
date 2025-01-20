@@ -21,7 +21,7 @@ public class Guardar {
         System.out.println(p1.getEdad());
 
         try {
-            salida = new ObjectOutputStream(new FileOutputStream("src/empleats.ser"));
+            salida = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("src/empleats.ser")));
             salida.writeObject(p1);
             salida.close();
         } catch (IOException e) {

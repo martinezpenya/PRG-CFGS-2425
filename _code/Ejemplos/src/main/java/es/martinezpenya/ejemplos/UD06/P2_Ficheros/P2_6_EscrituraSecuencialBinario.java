@@ -7,8 +7,7 @@ public class P2_6_EscrituraSecuencialBinario {
 
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
-        try (
-                DataOutputStream fs = new DataOutputStream(
+        try (DataOutputStream fs = new DataOutputStream(
                         new BufferedOutputStream(
                                 new FileOutputStream("jugadores.dat")));) {
             for (int i = 1; i <= 5; i++) {

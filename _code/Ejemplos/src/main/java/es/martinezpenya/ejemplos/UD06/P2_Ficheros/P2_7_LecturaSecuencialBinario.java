@@ -20,6 +20,7 @@ public class P2_7_LecturaSecuencialBinario {
             }
         } catch (EOFException e) {
             //Se lanzará cuando se llegue al final del fichero
+            System.out.println("FIN");
         } catch (FileNotFoundException e) {
             System.out.println("Probrema al abrir el fichero");
         } catch (IOException e) {

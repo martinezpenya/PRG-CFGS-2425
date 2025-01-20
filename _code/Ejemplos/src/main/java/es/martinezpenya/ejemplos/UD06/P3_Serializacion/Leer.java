@@ -9,7 +9,7 @@ public class Leer {
         Persona p1, p2, p3, p4;
 
         try {
-            entrada = new ObjectInputStream(new FileInputStream("src/empleats.ser"));
+            entrada = new ObjectInputStream(new BufferedInputStream(new FileInputStream("src/empleats.ser")));
             p1 = (Persona) entrada.readObject();
             entrada.close();
 
