@@ -241,6 +241,40 @@ En muchas ocasiones, una sola clase de las vistas no nos da la funcionalidad nec
 
 En este caso tendríamos que combinar tres clases:
 
+```mermaid
+
+graph TB
+	A(("Programa en Java")) 
+	E[("Archivo (Stream final)")]
+	subgraph Data
+	direction TB
+		B["DataOutputStream"]
+    	H["DataInputStream"]
+    end
+    A ==> B
+    H ==> A
+    subgraph Buffered
+		C[BufferedOutputStream]
+    	G[BufferedInputStream]
+    end
+    B ==> C
+    G ==> H
+    subgraph File
+    	D[FileOutputStream]
+    	F[FileInputStream]
+    end
+    C ==> D
+    F ==> G
+    F ==> E
+    E ==> D
+
+    
+```
+
+
+
+
+
 ![image-20220313205036000](/assets/image-20220313205036000.png)
 
 ```java
