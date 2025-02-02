@@ -174,7 +174,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 
   ```java
   public class Util {
-      public static <T extends Number> Double Sumar (T t1, T t2){
+      public static <T extends Number> Double sumar (T t1, T t2){
           return new Double(t1.doubleValue() + t2.doubleValue());
       }
   }
@@ -294,7 +294,7 @@ Si el elemento ya está en el conjunto, el método `add` retornará `false` indi
 
 ### Acceso
 
-Y ahora te preguntarás, ¿cómo accedo a los elementos almacenados en un conjunto? Para obtener los elementos almacenados en un conjunto hay que usar iteradores, que permiten obtener los elementos del conjunto uno a uno de forma secuencial (no hay otra forma de acceder a los elementos de un conjunto, es su inconveniente). Los iteradores se ven en mayor profundidad más adelante, de momento, vamos a usar iteradores de forma transparente, a través de una estructura for especial, denominada bucle " for-each " o bucle "para cada". En el siguiente código se usa un bucle foreach, en él la variable i va tomando todos los valores almacenados en el conjunto hasta que llega al último:
+Y ahora te preguntarás, ¿cómo accedo a los elementos almacenados en un conjunto? Para obtener los elementos almacenados en un conjunto hay que usar iteradores, que permiten obtener los elementos del conjunto uno a uno de forma secuencial (no hay otra forma de acceder a los elementos de un conjunto, es su inconveniente). Los iteradores se ven en mayor profundidad más adelante, de momento, vamos a usar iteradores de forma transparente, a través de una estructura *for* especial, denominada bucle "for-each" o bucle "para cada". En el siguiente código se usa un bucle *for-each*, en él la variable i va tomando todos los valores almacenados en el conjunto hasta que llega al último:
 
 ```java
 for (Integer i: conjunto) {
@@ -381,7 +381,7 @@ LinkedHashSet<Integer> B= new LinkedHashSet<Integer>();
 B.add(10); B.add(20); B.add(5); B.add(7); // Elementos del conjunto B: 10, 20, 5 y 7
 ```
 
-En el ejemplo anterior, el literal de número se convierte automáticamente a la clase envoltorio `Integer` sin tener que hacer nada, lo cual es una ventaja. Veamos las formas de combinar ambas colecciones:
+En el ejemplo anterior, el literal de número se convierte automáticamente a la clase envoltorio (wrapper) `Integer` sin tener que hacer nada, lo cual es una ventaja. Veamos las formas de combinar ambas colecciones:
 
 - **Unión**. Añadir todos los elementos del conjunto B en el conjunto A.
 
@@ -435,8 +435,7 @@ Por defecto, los `TreeSet` ordenan sus elementos de forma ascendente, pero, ¿se
 
 Para indicar a un `TreeSet` cómo tiene que ordenar los elementos, debemos decirle cuándo un elemento va antes o después que otro, y cuándo son iguales. Para ello, utilizamos la interfaz genérica `java.util.Comparator` , usada en general en algoritmos de ordenación, como veremos más adelante.
 
-Se trata de crear una clase que implemente dicha interfaz, así de fácil. Dicha interfaz requiere de un único método que debe calcular si un objeto pasado por parámetro es mayor, menor o igual que otro del mismo tipo. Veamos un ejemplo general de cómo implementar un comparador para una
-hipotética clase `Objeto`:
+Se trata de crear una clase que implemente dicha interfaz, así de fácil. Dicha interfaz requiere de un único método que debe calcular si un objeto pasado por parámetro es mayor, menor o igual que otro del mismo tipo. Veamos un ejemplo general de cómo implementar un comparador para una hipotética clase `Objeto`:
 
 ```java
 class ComparadorDeObjetos implements Comparator<Objeto> {
