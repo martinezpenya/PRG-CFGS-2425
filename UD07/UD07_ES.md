@@ -443,7 +443,7 @@ class ComparadorDeObjetos implements Comparator<Objeto> {
 }
 ```
 
-La interfaz `Comparator` obliga a implementar un único método, es el método compare , el cual tiene dos parámetros: los dos elementos a comparar. Las reglas son sencillas, a la hora de personalizar dicho método:
+La interfaz `Comparator` obliga a implementar un único método, es el método `compare` , el cual tiene dos parámetros: los dos elementos a comparar. Las reglas son sencillas, a la hora de personalizar dicho método:
 
 - Si el primer objeto (o1) es menor que el segundo (o2), debe retornar un número entero negativo.
 - Si el primer objeto (o1) es mayor que el segundo (o2), debe retornar un número entero positivo.
@@ -457,7 +457,7 @@ A veces, cuando el orden que deben tener los elementos es diferente al orden rea
 
 Una vez creado el comparador simplemente tenemos que pasarlo como parámetro en el momento de la creación al `TreeSet` , y los datos internamente mantendrán dicha ordenación:
 ```java
-TreeSet<Objeto> ts=new TreeSet<Objeto>(new ComparadorDeObjetos());
+TreeSet<Objeto> ts=new TreeSet<>(new ComparadorDeObjetos());
 ```
 
 Hay otra manera de definir esta ordenación, pero lo estudiaremos más a fondo en el punto [Comparadores](#Comparadores)
