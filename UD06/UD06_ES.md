@@ -241,44 +241,64 @@ En muchas ocasiones, una sola clase de las vistas no nos da la funcionalidad nec
 
 En este caso tendríamos que combinar tres clases:
 
-```mermaid
-
-graph TB
-	A(("Programa en Java")) 
-	E[("Archivo (Stream final)")]
-	subgraph Data
-	direction TB
-		B["DataOutputStream"]
-    	H["DataInputStream"]
-    end
-    A ==> B
-    H ==> A
-    subgraph Buffered
-		C[BufferedOutputStream]
-    	G[BufferedInputStream]
-    end
-    B ==> C
-    G ==> H
-    subgraph File
-    	D[FileOutputStream]
-    	F[FileInputStream]
-    end
-    C ==> D
-    F ==> G
-    F ==> E
-    E ==> D
-
-    
-```
-
-
-
-
-
-![image-20220313205036000](/assets/image-20220313205036000.png)
+### Para la entrada/lectura:
 
 ```java
-BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
+FileInputStream fis = new FileInputStream("fichero.bin");
+BufferedInputStream bis = new BufferedInputStream(fis);
+DataInputStream dis = new DataInputStream(bis);
+//o bien
+DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream("fichero.bin")));
+```
+
+```mermaid
+sequenceDiagram
+    participant Usuario
+    participant FileInputStream
+    participant BufferedInputStream
+    participant DataInputStream
+    participant Stream as "Stream (Fichero Binario)"
+
+    Usuario->>+FileInputStream: Crea FileInputStream (abre el fichero)
+    FileInputStream->>+BufferedInputStream: Encadena BufferedInputStream (para mejorar eficiencia)
+    BufferedInputStream->>+DataInputStream: Encadena DataInputStream (para leer tipos primitivos)
+
+    DataInputStream->>+Stream: Solicita datos del fichero
+    Stream-->>DataInputStream: Devuelve datos leídos (bytes)
+    DataInputStream-->>Usuario: Devuelve datos convertidos (ej: int, double)
+
+    Usuario->>DataInputStream: Cierra DataInputStream
+    DataInputStream->>BufferedInputStream: Cierra BufferedInputStream
+    BufferedInputStream->>FileInputStream: Cierra FileInputStream
+```
+### Para la salida/escritura
+```java
+FileOutputStream fos = new FileOutputStream("fichero.bin");
+BufferedOutputStream bos = new BufferedOutputStream(fos);
+DataOutputStream dos = new DataOutputStream(bos);
+//o bien
+DataInputStream dos = new DataInputStream(new BufferedInputStream(new FileInputStream("fichero.bin")));
+```
+
+```mermaid
+sequenceDiagram
+    participant Usuario
+    participant FileOutputStream
+    participant BufferedOutputStream
+    participant DataOutputStream
+    participant Stream as "Stream (Fichero Binario)"
+
+    Usuario->>+FileOutputStream: Crea FileOutputStream (abre el fichero)
+    FileOutputStream->>+BufferedOutputStream: Encadena BufferedOutputStream (para mejorar eficiencia)
+    BufferedOutputStream->>+DataOutputStream: Encadena DataOutputStream (para escribir tipos primitivos)
+
+    Usuario->>DataOutputStream: Escribe datos (ej: writeInt(), writeDouble(), etc.)
+    DataOutputStream->>+Stream: Envía datos al fichero binario
+    Stream-->>DataOutputStream: Confirma escritura
+
+    Usuario->>DataOutputStream: Cierra DataOutputStream
+    DataOutputStream->>BufferedOutputStream: Cierra BufferedOutputStream
+    BufferedOutputStream->>FileOutputStream: Cierra FileOutputStream
 ```
 
 ## `try` vs `try(with resources)`
