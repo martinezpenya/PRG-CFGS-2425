@@ -35,7 +35,9 @@ typora-copy-images-to:${filename}/../assets
 
 # **Generación y Carga de JSON y YAML en Java**
 
-Para trabajar con JSON y YAML en Java, utilizaremos las bibliotecas **Jackson** (para JSON) y **SnakeYAML** (para YAML).
+Para trabajar con **`JSON`** y **`YAML`** en Java, utilizaremos las bibliotecas [**Jackson**](https://github.com/FasterXML/jackson). 
+
+Para trabajar con **`JSON`** y **`YAML`** en Java usando **Jackson**, asegúrate de agregar las dependencias correctas en tu `pom.xml`. Jackson es una biblioteca poderosa y flexible que te permite manejar ambos formatos de manera eficiente.
 
 **Dependencias Maven:**
 
@@ -211,7 +213,7 @@ public class TestLibro {
 
 **Archivo `libros.yaml`:**
 
-```json
+```yaml
 ---
 - titulo: "El Principito"
   autor: "Antoine de Saint-Exupéry"
