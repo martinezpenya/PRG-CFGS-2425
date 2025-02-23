@@ -37,6 +37,14 @@ typora-copy-images-to:${filename}/../assets
 
 Para trabajar con **`JSON`** y **`YAML`** en Java, utilizaremos las bibliotecas [**Jackson**](https://github.com/FasterXML/jackson). 
 
+> ## Porqué `Jackson` y no `Gson`?
+>
+> Tanto **Jackson** como **Gson** son bibliotecas populares en Java para trabajar con **JSON** (serialización y deserialización). Ambas son ampliamente utilizadas,  pero tienen diferencias en términos de rendimiento, funcionalidades,  flexibilidad y facilidad de uso.
+>
+> - **Jackson**, desarrollada por **FasterXML**, es más potente, flexible y rápido,  pero tiene una curva de aprendizaje más pronunciada. Es ideal para  proyectos complejos o cuando necesitas trabajar con múltiples formatos (YAML, CSV, etc).
+> - **Gson**, desarrollada por Google, es más sencilla y fácil de usar, pero menos flexible y potente. Es  ideal para proyectos pequeños o cuando necesitas una solución rápida y  ligera.
+> 
+
 Para trabajar con **`JSON`** y **`YAML`** en Java usando **Jackson**, asegúrate de agregar las dependencias correctas en tu `pom.xml`. Jackson es una biblioteca poderosa y flexible que te permite manejar ambos formatos de manera eficiente.
 
 **Dependencias Maven:**
