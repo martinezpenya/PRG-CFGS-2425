@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfc4c14c-864a-4ab2-aa66-4410c7027b1b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../UD03/UD03_ejercicios_ES.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../UD03/UD03_ejercicios_ES.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UD05/UD05_anexo_ES.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../UD05/UD05_anexo_ES.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UD06/UD06_ejercicios_ES.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../UD06/UD06_ejercicios_ES.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD04/Recursividad2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD04/Recursividad2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD05/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD05/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Guardar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Guardar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Leer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Leer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P4_Sockets/AWSClienteSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P4_Sockets/AWSClienteSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_2_Sets/Ejemplo03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_2_Sets/Ejemplo03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_2_Sets/Ejemplo04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_2_Sets/Ejemplo04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_3_Listas/Ejemplo05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_3_Listas/Ejemplo05.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P3_Iterators/Ejemplo08.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P3_Iterators/Ejemplo08.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P3_Iterators/Ejemplo09.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P3_Iterators/Ejemplo09.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P4_Comparadores/Comparator1/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P4_Comparadores/Comparator1/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P4_Comparadores/Comparator2/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P4_Comparadores/Comparator2/Principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,44 +56,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Aleatorio.executor": "Run",
-    "Application.E01_HolaMundo.executor": "Run",
-    "Application.E02_TransformApp.executor": "Run",
-    "Application.E04_StartVsShown.executor": "Run",
-    "Application.E05_Label.executor": "Run",
-    "Application.E06_Button.executor": "Run",
-    "Application.E07_RadioButton.executor": "Run",
-    "Application.E08_CheckBox.executor": "Run",
-    "Application.E09_TextBox.executor": "Run",
-    "Application.EjemploUD02.executor": "Run",
-    "Application.GridPaneApp.executor": "Run",
-    "Application.GridPaneAppv2.executor": "Run",
-    "Application.Organizacion_sentencias_3.executor": "Run",
-    "Application.PaneApp.executor": "Run",
-    "Application.SingletonTestMain.executor": "Run",
-    "Application.StackPaneApp.executor": "Run",
-    "Application.VBoxAndHBoxApp.executor": "Run",
-    "Maven.Ejemplos [clean].executor": "Run",
-    "Maven.Ejemplos [compile].executor": "Run",
-    "Maven.Ejemplos [package].executor": "Run",
-    "Maven.Ejemplos [test].executor": "Run",
-    "Maven.Ejemplos [validate].executor": "Run",
-    "Maven.Ejemplos [verify].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/davpen/OneDriveGVA/DOCENCIA/24-25/PRG-2425/PRG-CFGS-2425/_code/Ejemplos",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AWSClienteSocket.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Aleatorio.executor&quot;: &quot;Run&quot;,
+    &quot;Application.E01_HolaMundo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.E02_TransformApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.E04_StartVsShown.executor&quot;: &quot;Run&quot;,
+    &quot;Application.E05_Label.executor&quot;: &quot;Run&quot;,
+    &quot;Application.E06_Button.executor&quot;: &quot;Run&quot;,
+    &quot;Application.E07_RadioButton.executor&quot;: &quot;Run&quot;,
+    &quot;Application.E08_CheckBox.executor&quot;: &quot;Run&quot;,
+    &quot;Application.E09_TextBox.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ejemplo01.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ejemplo02.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ejemplo03.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ejemplo04.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ejemplo09.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EjemploUD02.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GridPaneApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GridPaneAppv2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Guardar.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Leer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Organizacion_sentencias_3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.P1_1_FlujoEstandarEntrada.executor&quot;: &quot;Run&quot;,
+    &quot;Application.P1_2_FlujoEstandarSalida.executor&quot;: &quot;Run&quot;,
+    &quot;Application.P2_1_CrearFichero.executor&quot;: &quot;Run&quot;,
+    &quot;Application.P2_2_SobrescribirFichero.executor&quot;: &quot;Run&quot;,
+    &quot;Application.P2_3_LecturaSecuencialTexto.executor&quot;: &quot;Run&quot;,
+    &quot;Application.P2_4_EscrituraSecuencialTexto.executor&quot;: &quot;Run&quot;,
+    &quot;Application.P2_6_EscrituraSecuencialBinario.executor&quot;: &quot;Run&quot;,
+    &quot;Application.P2_7_LecturaSecuencialBinario.executor&quot;: &quot;Run&quot;,
+    &quot;Application.P5_1_Manejo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PaneApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Principal.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SingletonTestMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StackPaneApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.VBoxAndHBoxApp.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Ejemplos [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Ejemplos [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Ejemplos [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Ejemplos [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Ejemplos [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Ejemplos [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/davpen/OneDriveGVA/DOCENCIA/24-25/PRG-2425/PRG-CFGS-2425/_code/Ejemplos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos" />
@@ -97,8 +126,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
       </set>
     </attachedChunks>
   </component>
@@ -120,11 +149,44 @@
       <workItem from="1729505295809" duration="105000" />
       <workItem from="1729507717699" duration="1495000" />
       <workItem from="1732290395978" duration="35000" />
-      <workItem from="1734542850384" duration="1973000" />
+      <workItem from="1734542850384" duration="2407000" />
+      <workItem from="1736357310074" duration="653000" />
+      <workItem from="1736519299197" duration="1215000" />
+      <workItem from="1736521573760" duration="2102000" />
+      <workItem from="1736784882211" duration="787000" />
+      <workItem from="1736786778726" duration="800000" />
+      <workItem from="1736878660438" duration="214000" />
+      <workItem from="1736878990917" duration="1209000" />
+      <workItem from="1736957420802" duration="4429000" />
+      <workItem from="1737123369484" duration="3465000" />
+      <workItem from="1737129099494" duration="198000" />
+      <workItem from="1737374758054" duration="298000" />
+      <workItem from="1737386239868" duration="4168000" />
+      <workItem from="1737484394290" duration="472000" />
+      <workItem from="1738348287985" duration="1678000" />
+      <workItem from="1738596592993" duration="2830000" />
+      <workItem from="1738693117437" duration="1060000" />
+      <workItem from="1738772445814" duration="3103000" />
+      <workItem from="1738937937073" duration="1971000" />
+      <workItem from="1739013477865" duration="3000" />
+      <workItem from="1739381980499" duration="1229000" />
+      <workItem from="1739542396060" duration="29000" />
+      <workItem from="1739542440131" duration="564000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P4_Sockets/AWSServerSocket.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
