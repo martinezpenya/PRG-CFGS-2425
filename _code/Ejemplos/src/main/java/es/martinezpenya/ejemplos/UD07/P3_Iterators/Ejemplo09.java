@@ -64,9 +64,30 @@ public class Ejemplo09 {
             Producto p = it.next();
             System.out.println(p.getNombre() + " : " + p.getCantidad());
         }
-        
+
+        //Intentar eliminar sin Iterator --> ERROR
+//        for(Producto p : lista){
+//            if (p.getCantidad()%2==0){
+//                lista.remove(p);
+//            }
+//        }
+
+        Iterator<Producto> it = lista.iterator();
+        while(it.hasNext()){
+            Producto p = it.next();
+            if ((p.getCantidad()%2)==0){
+                it.remove();
+            }
+        }
+
+        //Imprimimos la colección de nuevo
+        System.out.println("\nLista sin pares");
+        for(Producto p : lista){
+            System.out.println(p.getNombre() + " " + p.getCantidad());
+        }
+
         //Eliminar todos los valores del ArrayList
         lista.clear();
-        System.out.println(" - Lista final con " + lista.size() + " elementos");
+        System.out.println("\n - Lista final con " + lista.size() + " elementos");
     }
 }

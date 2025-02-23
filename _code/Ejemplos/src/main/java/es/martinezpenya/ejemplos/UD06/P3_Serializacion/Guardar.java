@@ -5,7 +5,6 @@ import java.io.*;
 public class Guardar {
 
     public static void main(String args[]) {
-        ObjectOutputStream salida;
         Persona p1, p2, p3, p4;
 
         p1 = new Persona("Vicent", 1200.0);
@@ -21,7 +20,7 @@ public class Guardar {
         System.out.println(p1.getEdad());
 
         try {
-            salida = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("src/empleats.ser")));
+            ObjectOutputStream salida = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("src/empleats.ser")));
             salida.writeObject(p1);
             salida.close();
         } catch (IOException e) {

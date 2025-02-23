@@ -22,8 +22,8 @@ public class Ejemplo04 {
             }
         } while (conjunto.size() < 5);
         // Calcular la suma
-        Integer suma = 0;
-        for (Integer i : conjunto) {
+        int suma = 0;
+        for (int i : conjunto) {
             suma += i;
         }
         System.out.println("La suma es: " + suma);

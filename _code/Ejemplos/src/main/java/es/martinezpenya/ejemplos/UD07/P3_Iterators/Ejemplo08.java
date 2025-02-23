@@ -34,7 +34,7 @@ public class Ejemplo08 {
 
         //Recorremos la lista con un Iterador
         //creamos el iterador
-        Iterator it = l.iterator();
+        Iterator<String> it = l.iterator();
 
         //mientras haya elementos
         while (it.hasNext()) {

@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class AWSClienteSocket {
 
     private final static int PUERTO = 6000;
-    private static final String DNSAWS = "ec2-54-234-248-191.compute-1.amazonaws.com";
+    private static final String DNSAWS = "ec2-54-160-203-130.compute-1.amazonaws.com";
     //private static final String DNSAWS = "127.0.0.1";
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {

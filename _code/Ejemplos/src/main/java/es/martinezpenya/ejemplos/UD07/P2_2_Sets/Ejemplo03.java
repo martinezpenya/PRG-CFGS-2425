@@ -31,6 +31,7 @@ public class Ejemplo03 {
 
         conjuntoA.addAll(conjuntoB);
         imprimirColeccion(conjuntoA); //5 7 9 10 19 20
+        //conjuntoB.addAll(conjuntoA); //10 20 5 7 9 19
 
         conjuntoA.removeAll(conjuntoB);
         imprimirColeccion(conjuntoA); //9 19

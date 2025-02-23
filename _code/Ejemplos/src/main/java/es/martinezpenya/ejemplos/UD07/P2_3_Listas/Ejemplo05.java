@@ -29,7 +29,9 @@ public class Ejemplo05 {
 
         al.addAll(0, t.subList(1, t.size()));
         imprimirColeccion(al); //3 5 10 12 
-        
+
+        //al.clear(); //vacia
+
         al.subList(0, 2).clear();
         imprimirColeccion(al); //10 12 
     }

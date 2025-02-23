@@ -43,5 +43,13 @@ public class Persona implements Serializable {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", salario=" + salario +
+                ", tutor=" + tutor +
+                '}';
+    }
 }
