@@ -871,7 +871,7 @@ La mayoría de lenguajes populares actuales no se pueden considerar funcionales,
 
 > #### **Comparaciones**
 >
-> API del método List.sort de Java:
+> API del método `List.sort` de Java:
 >
 > ```java
 > default void sort(Comparator<? super E> c)
