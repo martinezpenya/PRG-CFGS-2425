@@ -242,8 +242,7 @@ Una clase derivada puede ser a su vez clase padre de otra que herede de ella y a
 
 Una clase hija no tiene acceso a los miembros privados de su clase padre, tan solo a los públicos (como cualquier parte del código tendría) y los protegidos (a los que sólo tienen acceso las clases derivadas y las del mismo paquete). Aquellos miembros que sean privados en la clase base también habrán sido heredados, pero el acceso a ellos estará restringido al propio funcionamiento de la superclase y sólo se podrá acceder a ellos si la superclase ha dejado algún medio indirecto para hacerlo (por ejemplo a través de algún método). 
 
-Todos los miembros de la superclase, tanto atributos como métodos, son heredados por la subclase. Algunos de estos miembros heredados podrán ser redefinidos o sobrescritos (overriden) y también podrán añadirse nuevos miembros. De alguna manera podría decirse que estás "ampliando" la clase
-base con características adicionales o modificando algunas de ellas (proceso de especialización).
+Todos los miembros de la superclase, tanto atributos como métodos, son heredados por la subclase. Algunos de estos miembros heredados podrán ser redefinidos o sobrescritos (overriden) y también podrán añadirse nuevos miembros. De alguna manera podría decirse que estás "ampliando" la clase base con características adicionales o modificando algunas de ellas (proceso de especialización).
 
 > # Una clase derivada extiende la funcionalidad de la clase base sin tener que volver a escribir el código de la clase base.
 
@@ -341,8 +340,7 @@ Revisa con cuidado el [Ejemplo 3.3](#ejemplo-3.3)
 
 Del mismo modo que se heredan los atributos, también se heredan los métodos, convirtiéndose a partir de ese momento en otros métodos más de la clase derivada, junto a los que hayan sido definidos específicamente.
 
-En el ejemplo de la clase `Persona`, si dispusiéramos de métodos get y set para cada uno de sus tres atributos (`nombre`, `apellidos`, `fechaNacim`), tendrías seis métodos que podrían ser heredados por sus clases derivadas. Podrías decir entonces que la clase Alumno, derivada de Persona, tiene diez
-métodos:
+En el ejemplo de la clase `Persona`, si dispusiéramos de métodos get y set para cada uno de sus tres atributos (`nombre`, `apellidos`, `fechaNacim`), tendrías seis métodos que podrían ser heredados por sus clases derivadas. Podrías decir entonces que la clase Alumno, derivada de Persona, tiene diez métodos:
 
 - Seis por ser Persona (`getNombre`, `getApellidos`, `getFechaNacim`, `setNombre`, `setApellidos`, `setFechaNacim`).
 - Oros cuatro más por ser Alumno (`getGrupo`, `setGrupo`, `getNotaMedia`, `setNotaMedia`).
@@ -442,7 +440,7 @@ Revisa con cuidado el [Ejemplo 3.6](#ejemplo-3.6)
 
 Ya has visto cómo crear una clase derivada, cómo acceder a los miembros heredados de las clases superiores, cómo redefinir algunos de ellos e incluso cómo invocar a un constructor de la superclase. Ahora se trata de poner en práctica todo lo que has aprendido para que puedas crear tus propias jerarquías de clases, o basarte en clases que ya existan en Java para heredar de ellas, y las utilices de manera adecuada para que tus aplicaciones sean más fáciles de escribir y mantener.
 
-La idea de la herencia no es complicar los programas, sino todo lo contrario: simplificarlos al máximo. Procurar que haya que escribir la menor cantidad posible de código repetitivo e intentar facilitar en lo posible la realización de cambios (bien para corregir errores bien para incrementar la funcionalidad).
+> ### La idea de la herencia no es complicar los programas, sino todo lo contrario: simplificarlos al máximo. Procurar que haya que escribir la menor cantidad posible de código repetitivo e intentar facilitar en lo posible la realización de cambios (bien para corregir errores bien para incrementar la funcionalidad).
 
 ## La clase `Object` en Java.
 
@@ -473,11 +471,11 @@ En determinados casos podrías considerar la posibilidad de que se necesite here
 
 El problema en estos casos es la posibilidad que existe de que se produzcan ambigüedades, así, si tuviéramos miembros con el mismo identificador en clases base diferentes, en tal caso, ¿qué miembro se hereda? Para evitar esto, los compiladores suelen solicitar que ante casos de ambigüedad, se especifique de manera explícita la clase de la cual se quiere utilizar un determinado miembro que pueda ser ambiguo.
 
-Ahora bien, la posibilidad de herencia múltiple no está disponible en todos los lenguajes orientados a objetos, ¿lo estará en Java? La respuesta es negativa.
+Ahora bien, la posibilidad de herencia múltiple no está disponible en todos los lenguajes orientados a objetos, ¿lo estará en Java? La respuesta es **negativa**.
 
-![image-20220418115420435](/assets/image-20220418115420435.png)
+![Herencia múltiple](/assets/image-20220418115420435.png)
 
-> ### En Java no existe la herencia múltiple de clases.
+> ### En Java **no existe** la herencia múltiple de clases.
 
 # Clases Abstractas
 
@@ -1239,27 +1237,28 @@ Clase `Rectangulo`:
 ```java
 package UD08._01_Ejemplo_2_1;
 
-public class Punto {
-    private double x;
-    private double y;
+class Rectangulo {
 
-    public Punto(double x, double y) {
-        this.x = x;
-        this.y = y;
+    private Punto vertice1;
+    private Punto vertice2;
+
+    public double calcularSuperficie() {
+        double area, base, altura; // Variables locales
+        base = vertice2.getX() - vertice1.getX(); // Antes era x2 - x1
+        altura = vertice2.getY() - vertice1.getY(); // Antes era y2 - y1
+        area = base * altura;
+        return area;
     }
-    public double getX() {
-	    return x;
+
+    public double CalcularPerimetro() {
+        double perimetro, base, altura; // Variables locales
+        base = vertice2.getX() - vertice1.getX(); // Antes era x2 - x1
+        altura = vertice2.getY() - vertice1.getY(); // Antes era y2 - y1
+        perimetro = 2 * base + 2 * altura;
+        return perimetro;
     }
-    public void setX(double x) {
-    	this.x = x;
-    }
-    public double getY() {
-    	return y;
-    }
-    public void setY(double y) {
-    	this.y = y;
-    } 
 }
+
 ```
 
 En la siguiente presentación puedes observar detalladamente el proceso completo de elaboración de la clase `Rectangulo` haciendo uso de la clase `Punto`:
