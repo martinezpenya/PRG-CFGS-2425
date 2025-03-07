@@ -1,16 +1,14 @@
 package es.martinezpenya.ejemplos.UD10._06_Consultas;
 
+import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+
 import java.sql.*;
 
-public class _1_EjemploResultSetMetaData {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/pr_tuNombre";
-    private static final String USUARIO = "pr_tuNombre";
-    private static final String PASSWD = "1234";
-
+public class EjemploResultSetMetaData {
     public static void main(String[] args) {
-        try (Connection con = DriverManager.getConnection(JDBC_URL, USUARIO, PASSWD);
+        try (Connection con = HikariCPSingleton.getConnection();
              Statement stmt = con.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT id, nombre, fecha_ingreso, salario FROM proveedores")) {
+             ResultSet rs = stmt.executeQuery("SELECT id, episode, title FROM films")) {
 
             // Obtener metadata del ResulSet
             ResultSetMetaData rsmd = rs.getMetaData();

@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class AWSTest {
 
-    private static final String AWSDNS = "databasedmp.czm6oy6yqn23.us-east-1.rds.amazonaws.com";
+    private static final String AWSDNS = "databasedmp.cipxbdkxiaqy.us-east-1.rds.amazonaws.com";
     private static final String DBNAME = "starwars";
     private static final int PUERTO = 3306;
     private static final String USERNAME = "admin";
