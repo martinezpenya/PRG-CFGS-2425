@@ -611,19 +611,23 @@ if (lafecha.getDayOfWeek().equals(DayOfWeek.SATURDAY)) {
 ## `Anexo1Wrappers`
 
 ```java
-package UD05;
+package es.martinezpenya.ejemplos.UD05;
 
 public class Anexo1Wrappers {
 
     public static void main(String[] args) {
 
         // WRAPPERS
-        Integer i1 = new Integer(42);
-        Integer i2 = new Integer("42");
-        Float f1 = new Float(3.14f);
-        Float f2 = new Float("3.14f");
+        //Integer i1 = new Integer(42); // Obsoleto (deprecated)
+        Integer i1 = Integer.valueOf(42);
+        //Integer i2 = new Integer("42");// Obsoleto (deprecated)
+        Integer i2 = Integer.valueOf("42");
+        //Float f1 = new Float(3.14f);// Obsoleto (deprecated)
+        Float f1 = Float.valueOf(3.14f);
+        //Float f2 = new Float("3.14f");// Obsoleto (deprecated)
+        Float f2 = Float.valueOf("3.14f");
 
-        Integer y = new Integer(567);	   //Crea el objeto
+        Integer y = Integer.valueOf(567);	   //Crea el objeto
         y++;				   //Lo desenvuelve, incrementa y lo vuelve a envolver 
         System.out.println("Valor: " + y); //Imprime el valor del Objeto y     
 
@@ -638,28 +642,28 @@ public class Anexo1Wrappers {
 
         // XXXVALUE
         Integer i4 = 120; // Crea un nuevo objeto wrapper
-        byte b = i4.byteValue(); // Convierte el valor de i4 a un primitivo byte 
+        byte b = i4.byteValue(); // Convierte el valor de i2 a un primitivo byte 
         short s1 = i4.shortValue(); // Otro de los métodos de Integer
         double d = i4.doubleValue(); // Otro de los métodos xxxValue de Integer 
         System.out.println(s1); // Muestra 120 como resultado
 
         Float f4 = 3.14f; // Crea un nuevo objeto wrapper
-        short s2 = f4.shortValue(); // Convierte el valor de f4 en un primitivo short
+        short s2 = f4.shortValue(); // Convierte el valor de f2 en un primitivo short
         System.out.println(s2); // El resultado es 3 (truncado, no redondeado)
 
         // PARSEXXXX
         double d4 = Double.parseDouble("3.14"); // Convierte un String a primitivo 
         System.out.println("d4 = " + d4);	// El resultado será d4 = 3.14 
         long l2 = Long.parseLong("101010", 2);	// un String binario a primitivo
-        System.out.println("l2 = " + l2);	// El resultado es l2 = 42
+        System.out.println("l2 = " + l2);	// El resultado es L2 42
 
         // TOSTRING
-        Double d1 = new Double("3.14");
-        System.out.println("d1 = " + d1.toString()); // El resultado es d1 = 3.14 
+        Double d1 = Double.valueOf("3.14");
+        System.out.println("d1 = " + d1.toString()); // El resultado es d = 3.14 
         String d2 = Double.toString(3.14); // d2 = "3.14"
-        System.out.println("d2 = " + d2); // El resultado es d2 = 3.14 
-        String s3 = "hex = " + Long.toString(254, 16); // s3 = "hex = fe" 
-        System.out.println("s3 = " + s3); // El resultado es s3 = 3.14
+        System.out.println("d2 = " + d2); // El resultado es d = 3.14 
+        String s3 = "hex = " + Long.toString(254, 16); // s = "hex = fe" 
+        System.out.println("s3 = " + s3); // El resultado es d = 3.14
 
         // TOXXXSTRING
         String s4 = Integer.toHexString(254); // Convierte 254 a hex 
