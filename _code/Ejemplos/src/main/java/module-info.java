@@ -4,6 +4,8 @@ module es.martinezpenya.ejemplos {
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
+    requires org.apache.commons.dbcp2;
+    requires com.zaxxer.hikari;
     requires java.sql;
 
     opens es.martinezpenya.ejemplos.UD09._01_EjemplosBasicos to javafx.fxml;
