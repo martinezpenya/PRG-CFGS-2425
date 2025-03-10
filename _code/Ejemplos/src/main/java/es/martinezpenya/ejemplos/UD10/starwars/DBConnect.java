@@ -12,14 +12,14 @@ public class DBConnect {
     // Configuración del pool de conexiones
     static {
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:mariadb://databasedmp.cipxbdkxiaqy.us-east-1.rds.amazonaws.com:3306/starwars"); // URL de la base de datos
+        config.setJdbcUrl("jdbc:mariadb://databasedmp.cipxbdkxiaqy.us-east-1.rds.amazonaws.com:6000/starwars"); // URL de la base de datos
         config.setUsername("admin"); // Usuario de la base de datos
         config.setPassword("123456Ab$"); // Contraseña de la base de datos
-        config.setMaximumPoolSize(10); // Número máximo de conexiones en el pool
+        config.setMaximumPoolSize(20); // Número máximo de conexiones en el pool
         config.setMinimumIdle(2); // Número mínimo de conexiones inactivas en el pool
-        config.setIdleTimeout(30000); // Tiempo de espera para conexiones inactivas (en milisegundos)
-        config.setMaxLifetime(1800000); // Tiempo máximo de vida de una conexión (en milisegundos)
-        config.setConnectionTimeout(30000); // Tiempo de espera para obtener una conexión (en milisegundos)
+        config.setIdleTimeout(3000); // Tiempo de espera para conexiones inactivas (en milisegundos)
+        config.setMaxLifetime(180000); // Tiempo máximo de vida de una conexión (en milisegundos)
+        config.setConnectionTimeout(300000); // Tiempo de espera para obtener una conexión (en milisegundos)
 
         dataSource = new HikariDataSource(config);
     }

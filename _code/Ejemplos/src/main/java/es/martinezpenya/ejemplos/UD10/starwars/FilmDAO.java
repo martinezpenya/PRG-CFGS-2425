@@ -28,13 +28,16 @@ public class FilmDAO implements DAO<Film> {
             pst.setString(3, film.getTitle());
 
             int filasInsertadas = pst.executeUpdate();
-            if (filasInsertadas > 0) {
+            /* El siguiente fragmento serviria para el caso en que la tabla tuviera un campo autoincremental
+              con pst.getGeneratedKeys() obtenemos el id generado y se lo podemos asignar al objeto
+              if (filasInsertadas > 0) {
                 ResultSet rs = pst.getGeneratedKeys();
                 if (rs.next()) {
                     int id = rs.getInt(1);
                     film.setId(id);
                 }
             }
+            */
         }
     }
 
