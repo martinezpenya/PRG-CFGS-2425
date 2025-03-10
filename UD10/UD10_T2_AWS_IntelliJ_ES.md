@@ -99,6 +99,8 @@ En la parte baja elegiremos crear un nuevo `Grupo de seguridad de VPC` y el puer
 
 ![Grupo de seguridad](/assets/RDS08b.png)
 
+> ### OJo! aunque el puerto 3306 debería estar abierto el la red del instituto, he encontrado ocasiones en las que no ha funcionado correctamente, si te sucede esto, puedes cambiar al puerto 6000 o alguno de los que te sugiera tu profesor.
+
 En el apartado `Configuración adicional` indicamos `starwars` como nombre de la base de datos inicial y cambiamos el periodo de retención de copias a `1 dia`:
 
 ![Configuración adicional](/assets/RDS08c.png)
@@ -320,7 +322,9 @@ Elige un número de película y te mostraré los personajes que aparecen en ella
 Ahora que has visto como crear una BBDD en AWS:
 
 1. Genera una nueva BBDD con el motor que prefieras (MySQL, MariaDB, Oracle, etc...)
-2. Carga una Base de Datos que puedas conseguir por tu cuenta, que crees desde cero, o a partir de las que te proporciona el profesor. La condición es que debe tener al menos 3 tablas y al menos dos de ellas deben estar relacionadas.
+2. Carga una Base de Datos que puedas conseguir por tu cuenta, que crees desde cero, o a partir de las que te proporciona el profesor. La condición es que debe tener al menos 3 tablas, al menos dos de ellas deben estar relacionadas, y debes tener al menos 10 registros (información) en cada una de las tablas.
+
+   Comenta con el profesor  (por correo electrónico) la BBDD que usaras para evitar que dos alumnos usen la misma (en caso que uses una que encuentres por Internet).
 3. Esta nueva Base de Datos será la que usaras para completar la [siguiente tarea](UD10_anexo_3_DAO_ES.pdf), así que quizá deberías echarle un ojo antes de tomar la decisión.
 
 Envía una memoria en fichero **pdf** explicando los pasos seguidos (con capturas) a la tarea de **Aules** correspondiente.
