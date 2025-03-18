@@ -3,7 +3,7 @@ package es.martinezpenya.ejemplos.UD10.starwars;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class CharacterFilmDAO implements DAO<CharacterFilm> {
+public class CharacterFilmsDAO implements DAO<CharacterFilm> {
     private static final String INSERT_QUERY = "INSERT INTO character_films (id_character, id_film) VALUES (?, ?)";
     private static final String SELECT_ALL_QUERY_BY_CHARACTER = "SELECT * FROM character_films WHERE id_character = ?";
     private static final String SELECT_ALL_QUERY_BY_FILM = "SELECT * FROM character_films WHERE id_film = ?";
@@ -13,7 +13,7 @@ public class CharacterFilmDAO implements DAO<CharacterFilm> {
 
     private Connection con;
 
-    public CharacterFilmDAO() {
+    public CharacterFilmsDAO () {
         try {
             con = DBConnect.getConnection();
         } catch (SQLException e) {

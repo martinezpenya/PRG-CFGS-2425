@@ -120,7 +120,7 @@ También debes añadir la acciones `ON ACTION` dentro de la pestaña `code` para
 
 `btnOperar`: #`operar`
 
-> ### Puede que tengas errores en el fichero fxml, de momento es normal, continua con el proceso.
+> ### Puede que tengas errores en el fichero `fxml`, de momento es normal, continua con el proceso.
 
 # Controladores
 
@@ -282,7 +282,7 @@ En las aplicaciones de interfaz gráfica es muy recomendable (y relativamente f�
 
 <img src="/assets/i18n.png" alt="Flutter Internationalization & Translations | Dev Genius" style="zoom:50%;" />
 
-Dentro del paquete de recursos (resources) vamos a añadir un `Resource Bundle`, es muy importante que el nombre del recurso acabe con la cadena "`.properties`" para que IntelliJ lo reconozca como un recurso de propiedades. Consideraremos que el lenguaje por defecto será el Español, así que solo debemos añadir un lenguaje más que será el "Ingles" (en). Por último podemos elegir guardar las propiedades en un fichero xml o un fichero de texto plano (desmarcando la opción):
+Dentro del paquete de recursos (resources) vamos a añadir un `Resource Bundle`, este tipo de recurso siempre acaba con la cadena "`.properties`" para que IntelliJ lo reconozca como un recurso de propiedades, así que nosotros pondremos solo `Calculadora`, y el IDE añadirá el "`.properties`". Consideraremos que el lenguaje por defecto será el Español, así que solo debemos añadir un lenguaje más que será el "Ingles" (en). Por último podemos elegir guardar las propiedades en un fichero xml o un fichero de texto plano (desmarcando la opción):
 
 ![Internacionalización, paso 0](/assets/IJ_i18n0.png)
 
@@ -322,7 +322,7 @@ Para ello:
 4. Escribimos/modificamos el idioma por defecto (Español)
 5. Escribimos/modificamos el idioma en Ingles.
 
-Ahora debemos hacer que el main de la clase CalculadoraApplication.java cargue estos recursos al cargar el formulario. Añadiremos la linea del recurso (ResourceBundle) y añadiremos el mismo (bundle) al cargar el formulario:
+Ahora debemos hacer que el main de la clase `CalculadoraApplication.java` cargue estos recursos al cargar el formulario. Añadiremos la linea del recurso (ResourceBundle) y añadiremos el mismo (bundle) al cargar el formulario:
 
 ```java
 public void start(Stage stage) throws IOException {
