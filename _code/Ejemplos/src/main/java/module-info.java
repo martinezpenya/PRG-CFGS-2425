@@ -1,10 +1,6 @@
 module es.martinezpenya.ejemplos {
-    requires javafx.controls;
-    requires javafx.fxml;
 
-    requires org.controlsfx.controls;
-    requires com.dlsc.formsfx;
-    requires org.apache.commons.dbcp2;
+    requires javafx.controls;
     requires com.zaxxer.hikari;
     requires java.sql;
 
@@ -18,7 +14,4 @@ module es.martinezpenya.ejemplos {
     exports es.martinezpenya.ejemplos.UD09._04_Pane;
     opens es.martinezpenya.ejemplos.UD09._05_GridPane to javafx.fxml;
     exports es.martinezpenya.ejemplos.UD09._05_GridPane;
-    exports es.martinezpenya.ejemplos._Otros;
-    opens es.martinezpenya.ejemplos._Otros to javafx.fxml;
-
 }

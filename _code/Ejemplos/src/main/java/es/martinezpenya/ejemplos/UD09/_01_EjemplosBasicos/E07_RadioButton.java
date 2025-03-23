@@ -60,6 +60,7 @@ public class E07_RadioButton extends Application {
         //Añadimos las imágenes a los Radio Button
         //ImageView imageCoche = new ImageView("UD09/coche.png");
         //rButton1.setGraphic(imageCoche);
+
         //Creamos el grupo de alternancia
         final ToggleGroup grupo = new ToggleGroup();
         rButton1.setToggleGroup(grupo);

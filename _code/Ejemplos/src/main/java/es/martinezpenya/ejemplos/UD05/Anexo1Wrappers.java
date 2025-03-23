@@ -5,12 +5,16 @@ public class Anexo1Wrappers {
     public static void main(String[] args) {
 
         // WRAPPERS
-        Integer i1 = new Integer(42);
-        Integer i2 = new Integer("42");
-        Float f1 = new Float(3.14f);
-        Float f2 = new Float("3.14f");
+        //Integer i1 = new Integer(42); // Obsoleto (deprecated)
+        Integer i1 = Integer.valueOf(42);
+        //Integer i2 = new Integer("42");// Obsoleto (deprecated)
+        Integer i2 = Integer.valueOf("42");
+        //Float f1 = new Float(3.14f);// Obsoleto (deprecated)
+        Float f1 = Float.valueOf(3.14f);
+        //Float f2 = new Float("3.14f");// Obsoleto (deprecated)
+        Float f2 = Float.valueOf("3.14f");
 
-        Integer y = new Integer(567);	   //Crea el objeto
+        Integer y = Integer.valueOf(567);	   //Crea el objeto
         y++;				   //Lo desenvuelve, incrementa y lo vuelve a envolver 
         System.out.println("Valor: " + y); //Imprime el valor del Objeto y     
 
@@ -41,7 +45,7 @@ public class Anexo1Wrappers {
         System.out.println("l2 = " + l2);	// El resultado es L2 42
 
         // TOSTRING
-        Double d1 = new Double("3.14");
+        Double d1 = Double.valueOf("3.14");
         System.out.println("d1 = " + d1.toString()); // El resultado es d = 3.14 
         String d2 = Double.toString(3.14); // d2 = "3.14"
         System.out.println("d2 = " + d2); // El resultado es d = 3.14 

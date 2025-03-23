@@ -42,12 +42,12 @@ public class E02_TransformApp extends Application {
         //Aplicaremos las transformaciones aquí
 
         //Descomentar para traslación
-        //box.setTranslateX(100);
+        box.setTranslateX(-100);
         box.setTranslateY(200);
 
         //Descomentar para escalado
         box.setScaleX(5.5);
-        //box.setScaleY(1.5);
+        box.setScaleY(0.5);
 
         //Descomentar para rotación
         box.setRotate(30);
@@ -55,7 +55,7 @@ public class E02_TransformApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(createContent(), 300, 300, Color.GRAY));
+        stage.setScene(new Scene(createContent(), 300, 300, Color.GREEN));
         stage.show();
     }
 

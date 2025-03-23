@@ -65,6 +65,7 @@ public class E06_Button extends Application {
         //Creamos el botón con texto e imágen
         Image image = new Image(E06_Button.class.getResourceAsStream("ok.png"));
         Button button4 = new Button("Aceptar", new ImageView(image));
+        //Button button4 = new Button("Aceptar");
         grid.add(button4, 0, 2, 2, 1);
 
         //métodos para cambiar el label segun el botón pulsado

@@ -58,7 +58,7 @@ public class E08_CheckBox extends Application {
         final CheckBox[] checkBox = new CheckBox[nombres.length];
         
         for (int i = 0; i < nombres.length; i++) {
-            final CheckBox cb = checkBox[i] = new CheckBox(nombres[i]);
+            CheckBox cb = checkBox[i] = new CheckBox(nombres[i]);
             cb.setAllowIndeterminate(true);
             grid.add(cb, 1, i);
         }

@@ -6,7 +6,7 @@ import java.util.List;
 class ComparadorPersona implements Comparator<Persona> {
     @Override
     public int compare(Persona p1, Persona p2){
-        return p2.getEdad() - p1.getEdad();
+        return p1.getEdad() - p2.getEdad();
     }
 }
 public class P6_3_Lambda {
@@ -27,7 +27,7 @@ public class P6_3_Lambda {
         }
 
         //FUNCIONAL
-        personas.sort((p1, p2) -> p2.getEdad() - p1.getEdad());
+        personas.sort((p1, p2) -> p1.getEdad() - p2.getEdad());
         for (int i = 0; i < personas.size(); i++){
             System.out.println(personas.get(i).toString());
         }

@@ -4,33 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfc4c14c-864a-4ab2-aa66-4410c7027b1b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../UD06/UD06_ejercicios_ES.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../UD06/UD06_ejercicios_ES.md" afterDir="false" />
+    <list default="true" id="67e3550b-69ff-4882-bab2-7a1e25d29361" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../UD04/UD04_anexo_ES-serveraulac06-safeBackup-0001.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UD09/UD09_ES.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../UD09/UD09_ES.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82730fb2-6781-40b5-9f46-9a8a57f6e209.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/82730fb2-6781-40b5-9f46-9a8a57f6e209.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Guardar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Guardar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Leer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Leer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P3_Serializacion/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P4_Sockets/AWSClienteSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P4_Sockets/AWSClienteSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_2_Sets/Ejemplo03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_2_Sets/Ejemplo03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_2_Sets/Ejemplo04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_2_Sets/Ejemplo04.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_3_Listas/Ejemplo05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_3_Listas/Ejemplo05.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P3_Iterators/Ejemplo08.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P3_Iterators/Ejemplo08.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jugadores.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD05/Anexo1Wrappers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD05/Anexo1Wrappers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_3_Listas/Ejemplo06.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P2_3_Listas/Ejemplo06.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P3_Iterators/Ejemplo09.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P3_Iterators/Ejemplo09.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P4_Comparadores/Comparator1/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P4_Comparadores/Comparator1/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P4_Comparadores/Comparator2/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P4_Comparadores/Comparator2/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P6_Funcional/P6_2_ImperativosFuncional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P6_Funcional/P6_2_ImperativosFuncional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P6_Funcional/P6_3_Lambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/P6_Funcional/P6_3_Lambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD07/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_01_Ejemplo_2_1/Punto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_01_Ejemplo_2_1/Punto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_06_Ejemplo_3_3/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_06_Ejemplo_3_3/Alumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_06_Ejemplo_3_3/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_06_Ejemplo_3_3/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_06_Ejemplo_3_3/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_06_Ejemplo_3_3/Profesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_10_Ejemplo_3_6/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_10_Ejemplo_3_6/Profesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_11_Ejemplo_4_1/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_11_Ejemplo_4_1/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_12_Ejemplo_4_2/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_12_Ejemplo_4_2/Alumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_18_Ejemplo_6_2/EjemploUso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_18_Ejemplo_6_2/EjemploUso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_18_Ejemplo_6_2/Flauta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_18_Ejemplo_6_2/Flauta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_19_Ejemplo_6_3/EjemploUso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD08/_19_Ejemplo_6_3/EjemploUso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E02_TransformApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E02_TransformApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E05_Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E05_Label.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E06_Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E06_Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E07_RadioButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E07_RadioButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E08_CheckBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/E08_CheckBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_03_StackPane/StackPaneApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD09/_03_StackPane/StackPaneApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD10/starwars/CharacterFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD10/starwars/CharacterFilm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD10/starwars/CharacterFilmDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD10/starwars/CharacterFilmDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD11/ODBSample/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD11/ODBSample/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/texto.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -51,142 +69,77 @@
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2nibTDaxWQvlAz4DyzoSXUhxwIR" />
+  <component name="ProjectId" id="2udWPU4xiuOVEDbR2m7qbXqNOHJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.AWSClienteSocket.executor&quot;: &quot;Run&quot;,
     &quot;Application.Aleatorio.executor&quot;: &quot;Run&quot;,
-    &quot;Application.E01_HolaMundo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.E02_TransformApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.E04_StartVsShown.executor&quot;: &quot;Run&quot;,
-    &quot;Application.E05_Label.executor&quot;: &quot;Run&quot;,
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
     &quot;Application.E06_Button.executor&quot;: &quot;Run&quot;,
-    &quot;Application.E07_RadioButton.executor&quot;: &quot;Run&quot;,
-    &quot;Application.E08_CheckBox.executor&quot;: &quot;Run&quot;,
-    &quot;Application.E09_TextBox.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Ejemplo01.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Ejemplo02.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Ejemplo03.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Ejemplo04.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Ejemplo09.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EjemploUD02.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GridPaneApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GridPaneAppv2.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Guardar.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Leer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Organizacion_sentencias_3.executor&quot;: &quot;Run&quot;,
-    &quot;Application.P1_1_FlujoEstandarEntrada.executor&quot;: &quot;Run&quot;,
-    &quot;Application.P1_2_FlujoEstandarSalida.executor&quot;: &quot;Run&quot;,
-    &quot;Application.P2_1_CrearFichero.executor&quot;: &quot;Run&quot;,
-    &quot;Application.P2_2_SobrescribirFichero.executor&quot;: &quot;Run&quot;,
-    &quot;Application.P2_3_LecturaSecuencialTexto.executor&quot;: &quot;Run&quot;,
-    &quot;Application.P2_4_EscrituraSecuencialTexto.executor&quot;: &quot;Run&quot;,
-    &quot;Application.P2_6_EscrituraSecuencialBinario.executor&quot;: &quot;Run&quot;,
-    &quot;Application.P2_7_LecturaSecuencialBinario.executor&quot;: &quot;Run&quot;,
-    &quot;Application.P5_1_Manejo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PaneApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Principal.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SingletonTestMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StackPaneApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VBoxAndHBoxApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Ejemplos [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.Ejemplos [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.Ejemplos [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Ejemplos [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Ejemplos [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Ejemplos [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Ejemplos [verify].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/davpen/OneDriveGVA/DOCENCIA/24-25/PRG-2425/PRG-CFGS-2425/_code/Ejemplos&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/DADES/OneDriveGVA/DOCENCIA/24-25/PRG-2425/PRG-CFGS-2425/_code/Ejemplos/src/main/java/es/martinezpenya/ejemplos/UD11/contactos&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5455382&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/es/martinezpenya/ejemplos/UD09/_01_EjemplosBasicos" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD11/contactos" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/es/martinezpenya/ejemplos/UD11/ODBSample" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="es.martinezpenya.ejemplos.UD10._06_Consultas" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bfc4c14c-864a-4ab2-aa66-4410c7027b1b" name="Changes" comment="" />
-      <created>1729458854616</created>
+      <changelist id="67e3550b-69ff-4882-bab2-7a1e25d29361" name="Changes" comment="" />
+      <created>1742578907844</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729458854616</updated>
-      <workItem from="1729458856118" duration="1117000" />
-      <workItem from="1729461461534" duration="188000" />
-      <workItem from="1729462453188" duration="641000" />
-      <workItem from="1729463749850" duration="4000" />
-      <workItem from="1729463766804" duration="30000" />
-      <workItem from="1729464525440" duration="5000" />
-      <workItem from="1729464541234" duration="47000" />
-      <workItem from="1729505295809" duration="105000" />
-      <workItem from="1729507717699" duration="1495000" />
-      <workItem from="1732290395978" duration="35000" />
-      <workItem from="1734542850384" duration="2407000" />
-      <workItem from="1736357310074" duration="653000" />
-      <workItem from="1736519299197" duration="1215000" />
-      <workItem from="1736521573760" duration="2102000" />
-      <workItem from="1736784882211" duration="787000" />
-      <workItem from="1736786778726" duration="800000" />
-      <workItem from="1736878660438" duration="214000" />
-      <workItem from="1736878990917" duration="1209000" />
-      <workItem from="1736957420802" duration="4429000" />
-      <workItem from="1737123369484" duration="3465000" />
-      <workItem from="1737129099494" duration="198000" />
-      <workItem from="1737374758054" duration="298000" />
-      <workItem from="1737386239868" duration="4168000" />
-      <workItem from="1737484394290" duration="472000" />
-      <workItem from="1738348287985" duration="1678000" />
-      <workItem from="1738596592993" duration="2830000" />
-      <workItem from="1738693117437" duration="1060000" />
-      <workItem from="1738772445814" duration="3103000" />
-      <workItem from="1738937937073" duration="1971000" />
-      <workItem from="1739013477865" duration="3000" />
-      <workItem from="1739381980499" duration="1229000" />
-      <workItem from="1739542396060" duration="29000" />
-      <workItem from="1739542440131" duration="564000" />
+      <updated>1742578907844</updated>
+      <workItem from="1742578908921" duration="4132000" />
+      <workItem from="1742670823089" duration="2220000" />
+      <workItem from="1742673235878" duration="31000" />
+      <workItem from="1742675016927" duration="746000" />
+      <workItem from="1742675820758" duration="832000" />
+      <workItem from="1742717892752" duration="7000" />
+      <workItem from="1742724323202" duration="22000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/es/martinezpenya/ejemplos/UD06/P4_Sockets/AWSServerSocket.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -9,12 +9,12 @@ public class Profesor extends Persona {
 
     // Método getNombre
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     // Método getApellidos
     public String getApellidos() {
-        return apellidos;
+        return this.apellidos;
     }
 
     // Método getFechaNacim
@@ -24,12 +24,12 @@ public class Profesor extends Persona {
 
     // Método getEspecialidad
     public String getEspecialidad() {
-        return especialidad;
+        return this.especialidad;
     }
 
     // Método getSalario
     public double getSalario() {
-        return salario;
+        return this.salario;
     }
 
     // Método setNombre

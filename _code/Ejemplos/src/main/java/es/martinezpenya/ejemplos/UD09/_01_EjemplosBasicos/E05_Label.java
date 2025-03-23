@@ -65,6 +65,7 @@ public class E05_Label extends Application {
         //Creamos la etiqueta con imágen
         Image image = new Image(E05_Label.class.getResourceAsStream("label.png"));
         Label label3 = new Label("Search", new ImageView(image));
+        //Label label3 = new Label("Search");
         label3.setGraphicTextGap(20);
         grid.add(label3, 2, 0);
 

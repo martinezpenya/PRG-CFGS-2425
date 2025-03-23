@@ -30,7 +30,7 @@ public class Profesor extends Persona {
     }
 
     // Método setEspecialidad
-    public void setESpecialidad(String especialidad) {
+    public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
 

@@ -1,4 +1,4 @@
-package es.martinezpenya.ejemplos.UD07.P2_3_Listas;
+package es.martinezpenya.ejemplos.UD07;
 
 public class Producto {
 

@@ -9,12 +9,12 @@ public class Alumno extends Persona {
 
     // Método getNombre
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     // Método getApellidos
     public String getApellidos() {
-        return apellidos;
+        return this.apellidos;
     }
 
     // Método getFechaNacim

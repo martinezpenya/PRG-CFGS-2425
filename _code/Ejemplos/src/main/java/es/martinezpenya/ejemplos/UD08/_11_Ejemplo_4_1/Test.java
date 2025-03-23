@@ -14,6 +14,7 @@ import java.time.LocalDate;
 public class Test {
     public static void main(String[] args) {
         Alumno a1 = new Alumno("", "", LocalDate.EPOCH, "", 0);
+        //Persona p1 = new Persona ("David", "Martinez", LocalDate.EPOCH);
     }
    
 }

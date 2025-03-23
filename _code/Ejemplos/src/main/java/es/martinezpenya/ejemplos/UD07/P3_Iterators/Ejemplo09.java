@@ -1,6 +1,6 @@
 package es.martinezpenya.ejemplos.UD07.P3_Iterators;
 
-import es.martinezpenya.ejemplos.UD07.P2_3_Listas.Producto;
+import es.martinezpenya.ejemplos.UD07.Producto;
 import java.util.ArrayList;
 import java.util.Iterator;
 

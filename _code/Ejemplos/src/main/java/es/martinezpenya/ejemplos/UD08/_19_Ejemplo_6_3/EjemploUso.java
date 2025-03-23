@@ -19,5 +19,13 @@ public class EjemploUso {
             obj = new Profesor("Profe", "Apellidos", LocalDate.of(1977, 3, 8));
         }
         System.out.format("Contenido del objeto: %s\n", obj.devolverContenidoString());
+        if (obj instanceof Alumno) {
+            System.out.println("eres alumno");
+            System.out.println(((Alumno) obj).getNotaMedia());
+        } else {
+            System.out.println("eres profesor");
+            System.out.println(((Profesor) obj).getSalario());
+        }
+
     } 
 }

@@ -30,7 +30,7 @@ class Persona{
 public class P6_2_ImperativosFuncional {
     public static void main(String[] args) {
 
-        List<Persona> personas = new ArrayList<>();
+        ArrayList<Persona> personas = new ArrayList<>();
 
         personas.add(new Persona("Nacho", 52));
         personas.add(new Persona("David", 47));
@@ -39,19 +39,19 @@ public class P6_2_ImperativosFuncional {
         personas.add(new Persona("Marta", 4));
 
         //IMPERATIVO
-        List<Persona> adultosImperativo = new ArrayList<>();
+        ArrayList<Persona> adultosImperativo = new ArrayList<>();
         for (int i = 0; i < personas.size(); i++) {
             if (personas.get(i).getEdad() >= 18)
                 adultosImperativo.add(personas.get(i));
         }
         for (Persona p : adultosImperativo) {
-            System.out.println(p.getNombre() + " " + p.getEdad());
+            System.out.println(p);
         }
 
         //FUNCIONAL
         List<Persona> adultosDeclarativo = personas.stream().filter(p -> p.getEdad() >= 18).collect(Collectors.toList());
         for (Persona p : adultosDeclarativo) {
-            System.out.println(p.getNombre() + " " + p.getEdad());
+            System.out.println(p);
         }
     }
 }
