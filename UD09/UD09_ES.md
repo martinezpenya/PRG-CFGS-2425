@@ -14,9 +14,9 @@ typora-copy-images-to:${filename}/../assets
 
 # Introducción
 
-JavaFX fue desarrollado por Chris Oliver. Inicialmente, el proyecto se denominó Form Follows Functions (F3). Está destinado a proporcionar las funcionalidades más ricas para el desarrollo de aplicaciones GUI. Posteriormente, Sun Micro-systems adquirió el proyecto F3 como JavaFX en junio de 2005.
+[JavaFX](https://openjfx.io/) fue desarrollado por Chris Oliver. Inicialmente, el proyecto se denominó Form Follows Functions (F3). Está destinado a proporcionar las funcionalidades más ricas para el desarrollo de aplicaciones GUI. Posteriormente, Sun Micro-systems adquirió el proyecto F3 como JavaFX en junio de 2005.
 
-Sun Micro-systems lo anuncia oficialmente en 2007 en la Conferencia W3. En octubre de 2008, se lanzó JavaFX 1.0. En 2009, la corporación ORACLE adquiere Sun Micro-Systems y lanzó JavaFX 1.2. la última versión de JavaFX es JavaFX 19. 
+Sun Micro-systems lo anuncia oficialmente en 2007 en la Conferencia W3. En octubre de 2008, se lanzó JavaFX 1.0. En 2009, la corporación ORACLE adquiere Sun Micro-Systems y lanzó JavaFX 1.2. la última versión de JavaFX es JavaFX 23. 
 
 JavaFX es una tecnología que nos permite crear aplicaciones de escritorio RIA (Ritch Internet Applications), esto es, aplicaciones web que tienen las características y capacidades de aplicaciones de escritorio, incluyendo aplicaciones multimedia interactivas que pueden ejecutarse en una amplia variedad de dispositivos. JavaFX está destinado a reemplazar a Swing como la biblioteca de GUI estándar para Java SE.
 
@@ -264,7 +264,7 @@ button.setOnKeyPressed(e -> ...);
 button.setOnKeyReleased(e -> ...);
 ```
 
-El objeto `e `aquí es de tipo `KeyEvent` y lleva información sobre el código de la tecla, que luego se puede asignar a una tecla física real en el teclado.
+El objeto `e ` aquí es de tipo `KeyEvent` y lleva información sobre el código de la tecla, que luego se puede asignar a una tecla física real en el teclado.
 
 Veremos más ejemplos más adelante en este tema.
 
@@ -1002,28 +1002,58 @@ La interfaz de usuario también presenta un `Separator`panel que divide la parte
 ```java
 VBox vbox = new VBox();
 
-Button btnRefresh = new Button("Refresh");
+        HBox controlesArriba = new HBox();
+        VBox.setMargin( controlesArriba, new Insets(10.0d) );
+        controlesArriba.setAlignment( Pos.BOTTOM_LEFT );
 
-HBox topRightControls = new HBox();
-topRightControls.getChildren().add( signOutLink );
+        Button btnActualizar = new Button("Actualizar");
 
-topControls.getChildren().addAll( btnRefresh, topRightControls );
+        HBox controlesArribaDerecha = new HBox();
+        HBox.setHgrow(controlesArribaDerecha, Priority.ALWAYS );
+        controlesArribaDerecha.setAlignment( Pos.BOTTOM_RIGHT );
+        Hyperlink lnkCerrarSesion = new Hyperlink("Cerrar sesión");
+        controlesArribaDerecha.getChildren().add( lnkCerrarSesion );
 
-TableView<Customer> tblCustomers = new TableView<>();
-Separator sep = new Separator();
+        controlesArriba.getChildren().addAll( btnActualizar, controlesArribaDerecha );
 
-HBox bottomControls = new HBox();
+        TableView<Cliente> tblClientes = new TableView<>();
+        tblClientes.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        VBox.setMargin( tblClientes, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );
+        VBox.setVgrow( tblClientes, Priority.ALWAYS );
 
-Button btnClose = new Button("Close");
+        TableColumn<Cliente, String> columnaApellidos = new TableColumn<>("Apellidos");
+        columnaApellidos.setCellValueFactory(new PropertyValueFactory<>("apellidos"));
 
-bottomControls.getChildren().add( btnClose );
+        TableColumn<Cliente, String> columnaNombre = new TableColumn<>("Nombre");
+        columnaNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
 
-vbox.getChildren().addAll(
-        topControls,
-        tblCustomers,
-        sep,
-        bottomControls
-);
+        tblClientes.getColumns().addAll( columnaApellidos, columnaNombre );
+
+        Separator sep = new Separator();
+
+        HBox controlesAbajo = new HBox();
+        controlesAbajo.setAlignment(Pos.BOTTOM_RIGHT );
+        VBox.setMargin( controlesAbajo, new Insets(10.0d) );
+
+        Button btnCerrar = new Button("Cerrar");
+
+        controlesAbajo.getChildren().add( btnCerrar );
+
+        vbox.getChildren().addAll(
+                controlesArriba,
+                tblClientes,
+                sep,
+                controlesAbajo
+        );
+
+        Scene scene = new Scene(vbox );
+
+        primaryStage.setScene( scene );
+        primaryStage.setWidth( 800 );
+        primaryStage.setHeight( 600 );
+        primaryStage.setTitle("Aplicación con VBox y HBox");
+        primaryStage.setOnShown( (evt) -> loadTable(tblClientes) );
+        primaryStage.show();
 ```
 
 Esta imagen muestra la maqueta desglosada por contenedor. El padre `VBox` es el rectángulo azul más externo. Los HBoxes son los rectángulos interiores (rojo y verde).
