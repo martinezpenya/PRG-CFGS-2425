@@ -12,7 +12,7 @@ public class HikariCPSingleton {
     // Configuración del pool de conexiones
     static {
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:mariadb://databasedmp.cipxbdkxiaqy.us-east-1.rds.amazonaws.com:3306/starwars"); // URL de la base de datos
+        config.setJdbcUrl("jdbc:mariadb://databasedmp.cipxbdkxiaqy.us-east-1.rds.amazonaws.com:6000/starwars"); // URL de la base de datos
         config.setUsername("admin"); // Usuario de la base de datos
         config.setPassword("123456Ab$"); // Contraseña de la base de datos
         config.setMaximumPoolSize(10); // Número máximo de conexiones en el pool

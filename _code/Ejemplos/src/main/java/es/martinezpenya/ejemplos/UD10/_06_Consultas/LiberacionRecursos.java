@@ -31,7 +31,7 @@ public class LiberacionRecursos {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (java.sql.SQLException ex) {
+            } catch (SQLException ex) {
                 System.out.println("ERROR: " + ex.getMessage());
             }
             try {
@@ -39,7 +39,7 @@ public class LiberacionRecursos {
                 if (stmt != null) {
                     stmt.close();
                 }
-            } catch (java.sql.SQLException ex) {
+            } catch (SQLException ex) {
                 System.out.println("ERROR: " + ex.getMessage());
             }
         }

@@ -8,7 +8,7 @@ public class EjemploScrollInsensitive {
 
     public static void main(String[] args) {
         try (Connection con = HikariCPSingleton.getConnection();
-             Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+             Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
              ResultSet rs = stmt.executeQuery("SELECT id, name FROM characters")) {
 
             // Mover a la primera fila
@@ -23,7 +23,7 @@ public class EjemploScrollInsensitive {
 
             // Simulamos un retraso y actualizamos la base de datos (en otra sesión)
             System.out.println("Esperando las actualizaciones...");
-            Thread.sleep(10000); // Esperar 10 segundos
+            Thread.sleep(20000); // Esperar 10 segundos
 
             // Mover a la primera fila otra vez
             if (rs.first()) {
