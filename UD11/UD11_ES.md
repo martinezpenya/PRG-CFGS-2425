@@ -355,12 +355,10 @@ Cuando se borra el contexto de persistencia, todas sus entidades administradas s
 Una clase de entidad es una clase Java ordinaria definida por el usuario cuyas instancias se pueden almacenar en la base de datos. La forma sencilla de declarar una clase como entidad es marcarla con la anotación [@Entity](https://www.objectdb.com/api/java/jpa/Entity):
 
 ```java
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
-public class MyEntity {
-
-}
+public class Entidad {
 ```
 
 **Requisitos de clase de entidad**
@@ -402,25 +400,22 @@ Las clases de fecha y hora `java.sql` representan diferentes partes de fechas y 
 Los tipos `java.util.Date` y `java.util.Calendar`, por otro lado, son genéricos y pueden representar cualquiera de los anteriores, usando la anotación   [@Temporal](https://www.objectdb.com/ api/java/jpa/Temporal):
 
 ```java
-@Entity
-public class DatesAndTimes {
-    // Date Only:
-    java.sql.Date date1;
-    @Temporal(TemporalType.DATE) java.util.Date date2;
-    @Temporal(TemporalType.DATE) java.util.Calendar date3;
+// Fecha:
+java.sql.Date date1;
+@Temporal(TemporalType.DATE) java.util.Date date2;
+@Temporal(TemporalType.DATE) java.util.Calendar date3;
 
-    // Time Only:
-    java.sql.Time time1;
-    @Temporal(TemporalType.TIME) java.util.Date time2;
-    @Temporal(TemporalType.TIME) java.util.Calendar time3;
+// Hora:
+java.sql.Time time1;
+@Temporal(TemporalType.TIME) java.util.Date time2;
+@Temporal(TemporalType.TIME) java.util.Calendar time3;
 
-    // Date and Time:
-    java.sql.Timestamp dateAndTime1;
-    @Temporal(TemporalType.TIMESTAMP) java.util.Date dateAndTime2;
-    @Temporal(TemporalType.TIMESTAMP) java.util.Calendar dateAndTime3;
-    java.util.Date dateAndTime4; // date and time, not JPA portable
-    java.util.Calendar dateAndTime5; // date and time, not JPA portable  
-}
+// Fecha y hora:
+java.sql.Timestamp dateAndTime1;
+@Temporal(TemporalType.TIMESTAMP) java.util.Date dateAndTime2;
+@Temporal(TemporalType.TIMESTAMP) java.util.Calendar dateAndTime3;
+java.util.Date dateAndTime4; // fecha y hora, no compatible con JPA
+java.util.Calendar dateAndTime5; // fecha y hora, no compatible con JPA
 ```
 
 Fechas puras persistentes (sin la parte de tiempo), ya sea usando el tipo `java.sql.Date` o especificando [@Temporal](https://www.objectdb.com/api/java/jpa/Temporal) La anotación [TemporalType](https://www.objectdb.com/api/java/jpa/TemporalType).[DATE](https://www.objectdb.com/api/java/jpa/TemporalType/DATE) tiene varios beneficios:
@@ -446,10 +441,7 @@ Además de las clases de colección y mapa que son totalmente compatibles con `O
 Por ejemplo, el método `Arrays.asList` devuelve una instancia de un tipo de colección Java interna que no es compatible con `ObjectDB`. Sin embargo, se puede almacenar la siguiente entidad:
 
 ```java
-@Entity
-public class EntityWithList {
-    private List<String> words = Arrays.asList("not", "ArrayList");
-}
+private List<String> palabras = Arrays.asList("casa", "manzana", "perro", "gato");
 ```
 
 Cuando la entidad se recupera de la base de datos, la lista se creará como una "ArrayList". En este caso, es esencial usar una interfaz (`List<String>`) para el tipo de campo para permitir el cambio al tipo de colección admitido cuando se recupera la entidad. En realidad, JPA requiere declarar campos de mapas y colecciones persistentes solo como tipos de interfaz (es decir, `java.util.Collection`, `java.util.List`, `java.util.Set`, `java.util.Map`), y Esa también es una buena práctica cuando se trabaja con `ObjectDB`.
@@ -471,16 +463,13 @@ Los campos de clases persistentes definidas por el usuario (clases de entidad) s
 Son campos que no participan en la persistencia y sus valores nunca se almacenan en la base de datos (similar a los campos *transient* en Java que no participan en la serialización). Los campos de entidad estática y final siempre se consideran *transient*. Otros campos se pueden declarar explícitamente como *transient* usando el modificador `transient` de Java (que también afecta la serialización) o la anotación JPA [@Transient](https://www.objectdb.com/api/java/jpa/Transient) (que sólo afecta la persistencia):
 
 ```java
-@Entity
-public class EntityWithTransientFields {
-    static int transient1; // no persistente por ser estático
-    final int transient2 = 0; // no persistente por ser final
-    transient int transient3; // no persistente por ser transient
-    @Transient int transient4; // no persistente por el uso de la etiqueta @Transient
-}
+static int transient1; // no persistente por ser estático
+final int transient2 = 0; // no persistente por ser final
+transient int transient3; // no persistente por ser transient
+@Transient int transient4; // no persistente por el uso de la etiqueta @Transient
 ```
 
-La clase de entidad anterior contiene solo campos de entidad *transient* (no persistentes) sin contenido real para almacenar en la base de datos.
+El ejemplo anterior contiene solo campos de entidad *transient* (no persistentes) sin contenido real para almacenar en la base de datos.
 
 ### Campos persistentes
 
@@ -494,17 +483,14 @@ Cada campo persistente se puede marcar con una de las siguientes anotaciones:
 
 - [OneToOne](https://www.objectdb.com/api/java/jpa/OneToOne), [ManyToOne](https://www.objectdb.com/api/java/jpa/ManyToOne) - para referencias de tipos de entidad.
 - [OneToMany](https://www.objectdb.com/api/java/jpa/OneToMany), [ManyToMany](https://www.objectdb.com/api/java/jpa/ManyToMany) - para colecciones y mapas de tipos de entidades.
-- [Básico](https://www.objectdb.com/api/java/jpa/Basic)- para cualquier otro tipo persistente.
+- [Básico](https://www.objectdb.com/api/java/jpa/Basic) para cualquier otro tipo persistente.
 
 En JPA solo [Básico](https://www.objectdb.com/api/java/jpa/Basic) es opcional, mientras que las otras anotaciones anteriores son obligatorias cuando corresponda. `ObjectDB`, sin embargo, no exige el uso de ninguna de estas anotaciones, por lo que son útiles sólo para clases que también se utilizan con un proveedor ORM JPA (como Hibernate) o para cambiar la configuración de campo predeterminada. Por ejemplo:
 
 ```java
-@Entity
-public class EntidadConAtributosPersistentes {
-    @Basic(optional=false) Integer campo1;
-    @OneToOne(cascade=CascadeType.ALL) MiEntidad campo2;
-    @OneToMany(fetch=FetchType.EAGER) List<MiEntidad> campo3;
-}
+@Basic(optional=false) Integer campo1;
+@OneToOne(cascade=CascadeType.ALL) Entidad campo2;
+@OneToMany(fetch=FetchType.EAGER) ArrayList<Entidad> campo3;
 ```
 
 La declaración de clase de entidad anterior demuestra el uso de anotaciones de campos y relaciones para cambiar el comportamiento predeterminado. Los valores "nulo" están permitidos de forma predeterminada. Al especificar "`optional=false`" (como se ha visto para "campo1") se genera una excepción en cualquier intento de almacenar una entidad con un valor "nulo" en ese campo. Las configuraciones de cascada y recuperación se explican más adelante.
@@ -522,17 +508,19 @@ Las clases incrustables son clases persistentes definidas por el usuario que fun
 Una clase se declara como **incrustable** marcándola con la anotación [Embeddable](https://www.objectdb.com/api/java/jpa/Embeddable):
 
 ```java
-@Embeddable public class Address {
-    protected String street;
-    protected String city;
-    protected String state;
-    @Embedded protected Zipcode zipcode;
+@Embeddable
+public class Direccion {
+    protected String calle;
+    protected String ciudad;
+    protected String pais;
+    protected String codPostal;
 }
+```
 
-@Embeddable public class Zipcode {
-    protected String zip;
-    protected String plusFour;
-}
+Y desde el punto de vista de la entidad que incluy este campo usaremos `@Embeddable`:
+
+```java
+@Embedded Direccion direccion;
 ```
 
 Las instancias de clases integrables siempre se integran en otros objetos de entidad y no requieren asignación de espacio ni operaciones de almacenamiento y recuperación independientes. Por lo tanto, el uso de clases integrables puede ahorrar espacio en la base de datos y mejorar la eficiencia.
@@ -553,9 +541,7 @@ Puede exponer las versiones de los objetos de entidad y hacer que sus valores se
 
 
 ```java
-@Entity public class EntityWithVersionField {
-     @Version long version;
-}
+@Version long version;
 ```
 
 Si existe un campo de versión, `ObjectDB` inyecta automáticamente el valor de la versión en ese campo. Los campos de versión deben ser tratados como de solo lectura por la aplicación y no se deben escribir métodos mutadores en ellos. Solo se permite un campo de versión por clase de entidad. De hecho, un único campo de versión por jerarquía de clases de entidad es suficiente porque las subclases heredan un campo de versión.
@@ -587,11 +573,7 @@ Se puede acceder al valor de clave principal de una entidad declarando un campo 
 
 
 ```java
-@Entity
-public class Project {
-    @Id @GeneratedValue long id; // Es generado por ObjectDB
-    [...]
-}
+@Id @GeneratedValue long id; // Es generado por ObjectDB
 ```
 
 La anotación [@Id](https://www.objectdb.com/api/java/jpa/Id) marca un campo como campo de clave principal. Cuando se define un campo de clave principal, `ObjectDB` inyecta automáticamente el valor de la clave principal en ese campo.
@@ -604,11 +586,7 @@ Si una entidad tiene un campo de clave principal que no está marcado con [@Gene
 
 
 ```java
-@Entity
-public class Project {
-    @Id long id; // Necesita ser generado por la aplicación
-    [...]
-}
+@Id long id2; // Es generado por la aplicación
 ```
 
 ## Operaciones CRUD con `JPA`
@@ -621,7 +599,9 @@ El siguiente código almacena una instancia de la clase de entidad "Empleado" en
 
 
 ```java
-Empleado empleado = new Empleado("Samuel", "Perez", "Garcia");
+//crear empleado
+Empleado empleado = new Empleado("David", "Martinez", "Peña");
+
 em.getTransaction().begin();
 em.persist(empleado);
 em.getTransaction().commit();
@@ -635,12 +615,13 @@ El siguiente código almacena una instancia de "`Empleado`" con una referencia a
 
 
 ```java
-Empleado empleado = new Empleado("Samuel", "Perez", "Garcia");
+//crear empleado con dirección
+Empleado empleado2 = new Empleado("David", "Martinez", "Peña");
 Direccion direccion = new Direccion("Carlet", "España");
-empleado.setDireccion(direccion);
+empleado2.setDireccion(direccion);
 
 em.getTransaction().begin();
-em.persist(empleado);
+em.persist(empleado2);
 em.getTransaction().commit();
 ```
 
@@ -654,11 +635,11 @@ La API de persistencia de Java (JPA) proporciona varias formas de recuperar obje
 
 **Recuperación por clase y clave principal**
 
-Cada objeto de entidad puede identificarse y recuperarse de forma única mediante la combinación de su clase y su clave principal. Dado un [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) `em`, el siguiente fragmento de código demuestra la recuperación de un objeto "`Empleado`" cuya clave principal es 1:
+Cada objeto de entidad puede identificarse y recuperarse de forma única mediante la combinación de su clase y su clave principal. Dado un [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) `em`, el siguiente fragmento de código demuestra la recuperación de un objeto "`Empleado`" cuya clave principal es 3:
 
 
 ```java
-Employee empleado = em.find(Empleado.class, 1);
+Empleado empleado3 = em.find(Empleado.class, 3);
 ```
 
 No es necesario convertir el objeto recuperado a `Empleado` porque [find](https://www.objectdb.com/api/java/jpa/EntityManager/find_Class__Object) se define como devolver una instancia de la misma clase que toma como primer argumento (usando genéricos).
@@ -672,12 +653,11 @@ Un campo de referencia persistente se puede excluir de esta recuperación autom�
 
 ```java
 @Entity
-class Empleado {
+public class Empleado {
     [...]
     @ManyToOne(fetch=FetchType.LAZY)
     private Empleado gerente;
     [...]
-}
 ```
 
 El valor predeterminado para campos no mapeados y que no son de colección es [FetchType](https://www.objectdb.com/api/java/jpa/FetchType).[EAGER](https://www.objectdb.com/api/java/ jpa/FetchType/EAGER), lo que indica que la operación de recuperación se realiza en cascada a través del campo. Especificando explícitamente [FetchType](https://www.objectdb.com/api/java/jpa/FetchType).[LAZY](https://www.objectdb.com/api/java/jpa/FetchType/LAZY) en ya sea en las anotaciones [@OneToOne](https://www.objectdb.com/api/java/jpa/OneToOne) o [@ManyToOne](https://www.objectdb.com/api/java/jpa/ManyToOne) excluye el campo de participar en la recuperación en cascada.
@@ -689,10 +669,10 @@ Esto se puede cambiar mediante una configuración explícita de `FetchType.EAGER
 
 ```java
 @Entity
-class Empleado {
+public class Empleado {
     [...]
     @ManyToMany(fetch=FetchType.EAGER)
-    private Collection<Proyecto> proyectos;
+    private ArrayList<Proyecto> proyectos;
     [...]
 }
 ```
@@ -707,15 +687,16 @@ Por ejemplo, después de recuperar una instancia de "Empleado" de la base de dat
 
 
 ```java
-Empleado empleado = em.find(Empleado.class, 1);
-Empleado gerente = employee.getGerente(); // puede estar vacio
+//recuperación del nombre del Gerente
+Empleado empleado3 = em.find(Empleado.class, 3);
+Empleado gerente3 = empleado3.getGerente(); // puede estar vacio por el FetchType.LAZY
 ```
 
 Si `gerente` esta vacío, la activación se produce cuando se accede por primera vez. Por ejemplo: 
 
 
 ```java
-String nombreGerente = gerente.getNombre();
+String nombreGerente = gerente3.getNombre();
 ```
 
 Acceder a un campo persistente en un objeto vacio (por ejemplo, el nombre del "gerente" en el ejemplo anterior) provoca la recuperación del contenido faltante de la base de datos y la inicialización de todos los campos persistentes.
@@ -733,10 +714,10 @@ Una vez que un objeto de entidad se recupera de la base de datos (sin importar d
 
 
 ```java
-Empleado empleado = em.find(Empleado.class, 1);
-
+//actualizar campo
+Empleado empleado4 = em.find(Empleado.class, 2);
 em.getTransaction().begin();
-empleado.setApodo("Juan Nadie");
+empleado4.setApellido1("Otroapellido");
 em.getTransaction().commit();
 ```
 
@@ -760,10 +741,10 @@ Para eliminar un objeto de la base de datos, primero debe recuperarse (sin impor
 
 
 ```java
-Empleado empleado = em.find(Empleado.class, 1);
-
+//eliminar empleado
+Empleado empleado5 = em.find(Empleado.class, 1);
 em.getTransaction().begin();
-em.remove(empleado);
+em.remove(empleado5);
 em.getTransaction().commit();
 ```
 
@@ -783,14 +764,16 @@ Como ocurre con la mayoría de las otras operaciones en JPA, el uso de consultas
 
 
 ```java
-Query q1 = em.createQuery("SELECT c FROM Country c");
+Query q1 = em.createQuery("SELECT e FROM Empleado e");
+List results1 = q1.getResultList();
 
-TypedQuery<Country> q2 = em.createQuery("SELECT c FROM Country c", Country.class);
+TypedQuery<Empleado> q2 = em.createQuery("SELECT e FROM Empleado e", Empleado.class);
+List<Empleado> results2 = q2.getResultList();
 ```
 
-En el código anterior, la misma consulta JPQL que recupera todos los objetos "País" en la base de datos está representada por "q1" y "q2". Al crear una instancia de [TypedQuery](https://www.objectdb.com/api/java/jpa/TypedQuery), el tipo de resultado esperado debe pasarse como argumento adicional, como se demostró para `q2`. Debido a que, en este caso, se conoce el tipo de resultado (la consulta devuelve sólo objetos `País`), se prefiere una `TypedQuery `.
+En el código anterior, la misma consulta JPQL que recupera todos los objetos "Empleado" en la base de datos está representada por "q1" y "q2". Al crear una instancia de [TypedQuery](https://www.objectdb.com/api/java/jpa/TypedQuery), el tipo de resultado esperado debe pasarse como argumento adicional, como se demostró para `q2`. Debido a que, en este caso, se conoce el tipo de resultado (la consulta devuelve sólo objetos `Empleado`), se prefiere una `TypedQuery `.
 
-Hay otra ventaja de utilizar `TypedQuery` en ObjectDB. En el contexto de las consultas anteriores, si aún no hay instancias de "País" en la base de datos y se desconoce la clase "País" como [una clase de entidad administrada](https://www.objectdb.com/java/jpa/ entidad/persistence-unit#managed_persistable_classes) - sólo la variante `TypedQuery` es válida porque introduce la clase `Country` en ObjectDB.
+Hay otra ventaja de utilizar `TypedQuery` en ObjectDB. En el contexto de las consultas anteriores, si aún no hay instancias de "Empleado" en la base de datos y se desconoce la clase "Empleado" como [una clase de entidad administrada](https://www.objectdb.com/java/jpa/ entidad/persistence-unit#managed_persistable_classes) - sólo la variante `TypedQuery` es válida porque introduce la clase `Country` en ObjectDB.
 
 **JPQL dinámico, API de criterios y consultas con nombre**
 
@@ -819,20 +802,20 @@ Además, la interfaz de consulta define un método para ejecutar consultas DELET
 
 **Ejecución de consulta ordinaria (con getResultList)**
 
-La siguiente consulta recupera todos los objetos País en la base de datos. La consulta debe ejecutarse utilizando el método [getResultList](https://www.objectdb.com/api/java/jpa/TypedQuery/getResultList), ya que esperamos recibir múltiples objetos a cambio:
+La siguiente consulta recupera todos los objetos Empleado en la base de datos. La consulta debe ejecutarse utilizando el método [getResultList](https://www.objectdb.com/api/java/jpa/TypedQuery/getResultList), ya que esperamos recibir múltiples objetos a cambio:
 
 
 ```java
-TypedQuery<Country> query = em.createQuery("SELECT c FROM Country c", Country.class);
-List<Country> results = query.getResultList();
+TypedQuery<Empleado> q2 = em.createQuery("SELECT e FROM Empleado e", Empleado.class);
+List<Empleado> results2 = q2.getResultList();
 ```
 
 Tanto [Query](https://www.objectdb.com/api/java/jpa/Query) como [TypedQuery](https://www.objectdb.com/api/java/jpa/TypedQuery) definen un `getResultList ` método, pero la versión de [Query](https://www.objectdb.com/api/java/jpa/Query) devuelve una lista de resultados de un tipo sin formato (no genérico) en lugar de un tipo parametrizado (genérico):
 
 
 ```java
-Query query = em.createQuery("SELECT c FROM Country c");
-List results = query.getResultList();
+Query q1 = em.createQuery("SELECT e FROM Empleado e");
+List results1 = q1.getResultList();
 ```
 
 Un intento de convertir los `resultados` anteriores a un tipo parametrizado (`List<Country>`) provocará una advertencia de compilación. Sin embargo, si se utiliza la nueva interfaz [TypedQuery](https://www.objectdb.com/api/java/jpa/TypedQuery), la conversión no es necesaria y se evita la advertencia.
@@ -841,58 +824,62 @@ La colección de resultados de la consulta funciona como cualquier otra colecci�
 
 
 ```java
-for (Country c : results) {
-    System.out.println(c.getName());
+for (Empleado e : results2) {
+    System.out.println(e.getNombre());
 }
 ```
 
-Tenga en cuenta que para imprimir solo los nombres de los países, sería necesaria una consulta utilizando [projection](https://www.objectdb.com/java/jpa/query/jpql/select) y recuperando los nombres de los países directamente en lugar de recuperar las instancias completas del país. más eficiente.
+Tenga en cuenta que para imprimir solo los nombres de los Empleados, sería necesaria una consulta utilizando [projection](https://www.objectdb.com/java/jpa/query/jpql/select) y recuperando los nombres de los empleados directamente en lugar de recuperar las instancias completas del Empleado. más eficiente.
 
-**Ejecución de consulta de resultado único (con getSingleResult)**
+**Ejecución de consulta de resultado único (con `getSingleResult`)**
 
 El método [getResultList](https://www.objectdb.com/api/java/jpa/TypedQuery/getResultList) (que se analizó anteriormente) también se puede utilizar para ejecutar consultas que devuelven un único objeto de resultado. En este caso, el objeto de resultado debe extraerse de la colección de resultados después de la ejecución de la consulta (por ejemplo, mediante `results.get(0)`). Para eliminar esta operación de rutina, JPA proporciona un método adicional, [getSingleResult](https://www.objectdb.com/api/java/jpa/TypedQuery/getSingleResult), como método más conveniente cuando se espera exactamente un objeto de resultado.
 
-La siguiente consulta agregada siempre devuelve un único objeto de resultado, que es un objeto "Largo" que refleja el número de objetos "País" en la base de datos:
+La siguiente consulta agregada siempre devuelve un único objeto de resultado, que es un objeto "Long" que refleja el número de objetos "Empleado" en la base de datos:
 
 
 ```java
-TypedQuery<Long> query = em.createQuery("SELECT COUNT(c) FROM Country c", Long.class);
-long countryCount = query.getSingleResult();
+TypedQuery<Long> query3 = em.createQuery("SELECT COUNT(e) FROM Empleado e", Long.class);
+long numeroEmpleados = query3.getSingleResult();
 ```
 
 Tenga en cuenta que cuando una consulta devuelve un único objeto, puede resultar tentador utilizar [Query](https://www.objectdb.com/api/java/jpa/Query) en lugar de [TypedQuery,](https://www.objectdb .com/api/java/jpa/TypedQuery) incluso cuando se conoce el tipo de resultado, porque la conversión de un solo objeto es fácil y el código es simple: 
 
 
 ```java
-Query query = em.createQuery("SELECT COUNT(c) FROM Country c");
-long countryCount = (Long)query.getSingleResult();
+long numeroEmpleados = query3.getSingleResult();
 ```
 
-Una consulta `COUNT` agregada siempre devuelve un resultado, por definición. En otros casos, nuestra expectativa de obtener un resultado de objeto único podría fallar, dependiendo del contenido de la base de datos. Por ejemplo, se espera que la siguiente consulta devuelva un único objeto País: 
+Una consulta `COUNT` agregada siempre devuelve un resultado, por definición. En otros casos, nuestra expectativa de obtener un resultado de objeto único podría fallar, dependiendo del contenido de la base de datos. Por ejemplo, se espera que la siguiente consulta devuelva un único objeto Empleado: 
 
 
 ```java
-Query query = em.createQuery(
-    "SELECT c FROM Country c WHERE c.name = 'Canada'");
-Country c = (Country)query.getSingleResult();
+Query query4 = em.createQuery("SELECT e FROM Empleado e WHERE e.nombre='David'");
+Empleado empleado6 = (Empleado) query4.getSingleResult(); //podria provocar una excepción si hay más de un empleado llamado David
 ```
 
-Sin embargo, la exactitud de esta suposición depende del contenido de la base de datos. Si la base de datos contiene varios objetos "País" con el nombre "Canadá" (por ejemplo, debido a un error), se genera una [NonUniqueResultException](https://www.objectdb.com/api/java/jpa/NonUniqueResultException). Por otro lado, si no hay ningún resultado, se genera una [NoResultException](https://www.objectdb.com/api/java/jpa/NoResultException). Por lo tanto, el uso de [getSingleResult](https://www.objectdb.com/api/java/jpa/TypedQuery/getSingleResult) requiere cierta precaución y, si existe alguna posibilidad de que se produzcan estas excepciones, deben detectarse y manejarse. .
+Sin embargo, la exactitud de esta suposición depende del contenido de la base de datos. Si la base de datos contiene varios objetos "Empleado" con el nombre "David", se genera una [NonUniqueResultException](https://www.objectdb.com/api/java/jpa/NonUniqueResultException). Por otro lado, si no hay ningún resultado, se genera una [NoResultException](https://www.objectdb.com/api/java/jpa/NoResultException). Por lo tanto, el uso de [getSingleResult](https://www.objectdb.com/api/java/jpa/TypedQuery/getSingleResult) requiere cierta precaución y, si existe alguna posibilidad de que se produzcan estas excepciones, deben detectarse y manejarse. .
 
 **ELIMINAR y ACTUALIZAR ejecución de consultas (con ejecutarActualización)**
 
 Consultas [ELIMINAR](https://www.objectdb.com/java/jpa/query/jpql/delete) y [ACTUALIZAR](https://www.objectdb.com/java/jpa/query/jpql/update) se ejecutan utilizando el método [executeUpdate](https://www.objectdb.com/api/java/jpa/Query/executeUpdate).
 
-Por ejemplo, la siguiente consulta elimina todas las instancias de "País": 
+Por ejemplo, la siguiente consulta elimina todas las instancias de "Empleado": 
 
 ```java
-int count = em.createQuery("DELETE FROM Country").executeUpdate();
+//Eliminar instancias de Empleado
+em.getTransaction().begin();
+int count = em.createQuery("DELETE FROM Empleado").executeUpdate();
+em.getTransaction().commit();
 ```
 
 The following query resets the area field in all the Country instances to zero: 
 
 ```java
-int count = em.createQuery("UPDATE Country SET area = 0").executeUpdate();
+//Actualizar todos los Empleados
+em.getTransaction().begin();
+int count2 = em.createQuery("UPDATE Empleado SET apellido1 = 'Martinez'").executeUpdate();
+em.getTransaction().commit();
 ```
 
 Se genera una [TransactionRequiredException](https://www.objectdb.com/api/java/jpa/TransactionRequiredException) si no hay ninguna transacción activa.
@@ -907,34 +894,32 @@ Los parámetros de consulta permiten la definición de consultas reutilizables. 
 
 **Parámetros con nombre (:nombre)**
 
-El siguiente método recupera un objeto "País" de la base de datos por su nombre:
+El siguiente método recupera un objeto "Empleado" de la base de datos por su nombre:
 
 
 ```java
-public Country getCountryByName(EntityManager em, String name) {
-    TypedQuery<Country> query = em.createQuery(
-        "SELECT c FROM Country c WHERE c.name = :name", Country.class);
-    return query.setParameter("name", name).getSingleResult();
+public Empleado getEmpleadoPorNombre(EntityManager em, String nombre) {
+    TypedQuery<Empleado> query = em.createQuery("SELECT e FROM Empleado e WHERE e.nombre = :nombre", Empleado.class);
+    return query.setParameter("nombre", nombre).getSingleResult();
 }
 ```
 
-La cláusula WHERE reduce los resultados de la consulta a objetos "País" cuyo valor del campo de nombre es igual a ":nombre", que es un parámetro que sirve como marcador de posición para un valor real. Antes de que se pueda ejecutar la consulta, se debe establecer un valor de parámetro utilizando el método [setParameter](https://www.objectdb.com/api/java/jpa/TypedQuery/setParameter_String_Object). El método [setParameter](https://www.objectdb.com/api/java/jpa/TypedQuery/setParameter_String_Object) admite el encadenamiento de métodos (devolviendo el mismo [TypedQuery](https://www.objectdb.com/api/ java/jpa/TypedQuery) instancia en la que se invocó), por lo que la invocación de [getSingleResult](https://www.objectdb.com/api/java/jpa/TypedQuery/getSingleResult) se puede encadenar a la misma expresión.
+La cláusula WHERE reduce los resultados de la consulta a objetos "Empleado" cuyo valor del campo de nombre es igual a ":nombre", que es un parámetro que sirve como marcador de posición para un valor real. Antes de que se pueda ejecutar la consulta, se debe establecer un valor de parámetro utilizando el método [setParameter](https://www.objectdb.com/api/java/jpa/TypedQuery/setParameter_String_Object). El método [setParameter](https://www.objectdb.com/api/java/jpa/TypedQuery/setParameter_String_Object) admite el encadenamiento de métodos (devolviendo el mismo [TypedQuery](https://www.objectdb.com/api/ java/jpa/TypedQuery) instancia en la que se invocó), por lo que la invocación de [getSingleResult](https://www.objectdb.com/api/java/jpa/TypedQuery/getSingleResult) se puede encadenar a la misma expresión.
 
-Los parámetros con nombre se pueden identificar fácilmente en una cadena de consulta por su forma especial, que son dos puntos (:) seguidos de un identificador JPQL válido que sirve como nombre del parámetro. JPA no proporciona una API para definir los parámetros explícitamente (excepto cuando se utiliza la API de criterios), por lo que los parámetros de consulta se definen implícitamente al aparecer en la cadena de consulta. El tipo de parámetro se infiere por el contexto. En el ejemplo anterior, una comparación de `:name` con un campo cuyo tipo es `String` indica que el tipo de `:name` en sí es `String`.
+Los parámetros con nombre se pueden identificar fácilmente en una cadena de consulta por su forma especial, que son dos puntos (:) seguidos de un identificador JPQL válido que sirve como nombre del parámetro. JPA no proporciona una API para definir los parámetros explícitamente (excepto cuando se utiliza la API de criterios), por lo que los parámetros de consulta se definen implícitamente al aparecer en la cadena de consulta. El tipo de parámetro se infiere por el contexto. En el ejemplo anterior, una comparación de `:nombre` con un campo cuyo tipo es `String` indica que el tipo de `:nombre` en sí es `String`.
 
 Las consultas pueden incluir varios parámetros y cada parámetro puede aparecer varias veces en la cadena de consulta. Una consulta solo se puede ejecutar después de establecer valores para todos sus parámetros (sin importar el orden).
 
 **Parámetros ordinales (`?indice`)**
 
-Además de los parámetros con nombre, cuya forma es `:name`, JPQL también admite parámetros ordinales, cuya forma es `?index`. El siguiente método es equivalente al método anterior, excepto que un parámetro ordinal reemplaza al parámetro nombrado:
+Además de los parámetros con nombre, cuya forma es `:nombre`, JPQL también admite parámetros ordinales, cuya forma es `?index`. El siguiente método es equivalente al método anterior, excepto que un parámetro ordinal reemplaza al parámetro nombrado:
 
 
 ```java
-  public Country getCountryByName(EntityManager em, String name) {
-    TypedQuery<Country> query = em.createQuery(
-        "SELECT c FROM Country c WHERE c.name = ?1", Country.class);
-    return query.setParameter(1, name).getSingleResult();
-  }
+public Empleado getEmpleadoPorNombreOrdinal(EntityManager em, String nombre) {
+    TypedQuery<Empleado> query = em.createQuery("SELECT e FROM Empleado e WHERE e.nombre = ?1", Empleado.class);
+    return query.setParameter(1, nombre).getSingleResult();
+}
 ```
 
 La forma de los parámetros ordinales es un signo de interrogación (?) seguido de un número int positivo. Aparte de la notación diferente, los parámetros con nombre y los parámetros ordinales son idénticos.
