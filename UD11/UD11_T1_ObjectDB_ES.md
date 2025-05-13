@@ -233,7 +233,7 @@ Si quieres volver a empezar solo debes borrar el fichero `*.odb` y al volver a e
 Ahora genera un documento `pdf` con el siguiente contenido:
 
 1. Explica para que sirven las etiquetas (`@Entity`, `@Id`, `@GeneratedValue` y `@Override`) que aparecen en la clase `Punto`.
-1. Modifica la clase `TestPunto.java` para que la base de datos se cree en la ruta `bdoo` en luga de `DB` y el fichero `.odb` tenga tu nombre (en mi caso `david.obj`).
+1. Modifica la clase `TestPunto.java` para que la base de datos se cree en la ruta `bdoo` en luga de `DB` y el fichero `.odb` tenga tu nombre (en mi caso `david.odb`).
 3. Modifica el método `main` y añade dos consultas más `q3`, `q4` y `q5` que muestren:
    1. `q3`: La media de los puntos Y.
    2. `q4`: consulte los puntos en los que la X o la Y sean superiores a 50.
