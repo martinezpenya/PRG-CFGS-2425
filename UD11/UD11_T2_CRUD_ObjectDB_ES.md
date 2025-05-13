@@ -29,8 +29,9 @@ Los pasos a seguir para realizar el proyecto serán los siguientes:
 
 Consideraciones adicionales:
 
-1. La BD se generará en una carpeta llamada `BD` dentro de la estructura de tu proyecto y puede ser un único fichero `obj`.
+1. La BD se generará en una carpeta llamada `BD` dentro de la estructura de tu proyecto y puede ser un único fichero `odb`.
 2. Para simplificar el proyecto no será necesario seguir los patrones vistos en la unidad anterior.
+3. Recuerda que en el proyecto no solo es necesario programar, sino también comentar lo que vas haciendo.
 
 # Ejemplo con dos tablas
 
@@ -43,7 +44,7 @@ Para clarificar las tareas a realizar, seguiremos con la BD de starwars del tema
 
 Más consideraciones:
 
-1. El fichero de la `BD` se llamará `starwars.obj` y se guardará en la carpeta `BD` de mi proyecto.
+1. El fichero de la `BD` se llamará `starwars.odb` y se guardará en la carpeta `BD` de mi proyecto.
 2. Aunque no es necesario, aplicar el patrón Singleton para acceder a la BD es relativamente sencillo e igual al de las BDR, así que unificaremos la conexión en una única clase.
 
 # Actividades
